@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+
+
+@theme inline {
+  /* --- PRIMÁRIAS --- */
+
+ 
+  --color-P5: #A56FEE;
+  --color-P4: #7E45CA;
+  --color-P3: #5E3891;
+  --color-P2: #402761;
+  --color-P1: #25153B;
+  --color-p6: #120C1A;
+  --color-BackGround: #120C1A;
+  --color-Footer: #1B1127;
+
+ 
+  --color-Pp5: #DEC3FF;
+  --color-Pp4: #D2ADFF;
+  --color-Pp3: #B679FF;
+  --color-Pp2: #A06FDB;
+  --color-Pp1: #8259B4;
+  --color-Pp0: #664989;
+
+  
+  --color-G5: #00FF73;
+  --color-G4: #00EE6B;
+  --color-G3: #04D361;
+  --color-G2: #00AC4D;
+  --color-G1: #007635;
+  --color-G0: #014B22;
+
+ 
+  --color-Gg5: #97F98A;
+  --color-Gg4: #6BE25B;
+  --color-Gg3: #5BB54F;
+  --color-Gg2: #3F8136;
+  --color-Gg1: #23481E;
+  --color-Gg0: #132911;
+
+  /* --- NEUTRAS --- */
+
+  
+  --color-B5: #DADADA;
+  --color-B4: #B1AEAE;
+  --color-B3: #767575;
+  --color-B2: #474747;
+  --color-B1: #1B1B1B;
+  --color-B0: #000000;
+
+  
+  --color-W6: #FFFFFF;
+  --color-W5: #EFEFEF;
+  --color-W4: #CACACA;
+  --color-W3: #D0D0D0;
+  --color-W2: #A9A9A9;
+  --color-W1: #818181;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
