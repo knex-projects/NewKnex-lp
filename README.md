@@ -16,30 +16,66 @@ Este projeto é uma landing page para a Knex, construída utilizando as tecnolog
 - **Fontes**: Geist, Geist Mono, Quantico e Montserrat.
 
 ## Estrutura do Projeto
+knex-lp/ 
+├── node_modules/ 
+├── public/ 
+├── assets/ (ou images/) │ 
+├── icons/ 
+├── linkedin.svg 
+ └── instagram.svg  
+├── fotos/  
+├── time-knex.jpg  
+└── event.webp  
+└── logo/ 
+ ├── logo-knex.svg 
+ ├── logo-knex-2.svg 
+ ├── eventflow.svg 
+ ├── iris.svg 
+ ├── sercomp.svg
+ ├── grDesing.svg 
+ ├── chama.svg
+ ├── confront.svg
+ ├── enej.svg
+ ├── neo.svg
+├── src/ 
+├── app/ <-- O "coração" das rotas 
+├── layout.tsx 
+├── page.tsx <-- Esta é a Home (/)
+ |── sobre/ 
+└── page.tsx 
+ |── faq/
+└── page.tsx 
+ |── contatos/ 
+└── page.tsx 
+└── components/ 
+	├── section/<-- Pasta das seções
+		├── herosection.tsx
+├── processsection.tsx
+├── portifoliosection.tsx
+├── servicesection.tsx
+├── teamsection.tsx
+├── aboutussection.tsx
+├── ourhistorysection.tsx
+├── eventssection.tsx
+├── movementssection.tsx
+├── movementssection.tsx
+├── contactsection.tsx
+└── faqsection.tsx
+├── layout/
+├── header.tsx
+└── footer.tsx
+		├── cards/<-- Pasta dos cards
+			├── teamcard.tsx
+├── eventcard.tsx
+├── portifoliocard.tsx
+├── servircecard.tsx
+└── processcard.tsx
+		├── form/ <-- Pasta do formulário
+└── consultform.tsx
 
-```
-src/
-├── app/
-│   ├── globals.css
-│   ├── layout.tsx
-│   ├── page.tsx          # Página inicial (Home)
-│   ├── contatos/
-│   │   └── page.tsx      # Página de Contatos
-│   ├── faq/
-│   │   └── page.tsx      # Página de FAQ
-│   └── sobre/
-│       └── page.tsx      # Página Sobre
-└── components/
-    ├── cards/            # Componentes de cartões
-    ├── forms/            # Componentes de formulários
-    ├── layout/           # Componentes de layout
-    └── sections/         # Componentes de seções
-public/
-└── assets/
-    ├── fotos/            # Imagens e fotos
-    ├── icons/            # Ícones
-    └── logos/            # Logos
-```
+
+├── next.config.js 
+└── package.json
 
 ## Instalação
 
