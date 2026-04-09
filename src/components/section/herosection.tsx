@@ -51,7 +51,7 @@ export const HeroSection = () => {
   return (
     <section className="pt-24">
       <div className="w-full flex items-center justify-between xl:px-60 py-30 px-10 flex-col lg:flex-row">
-        <div className="flex flex-col items-start justify-center gap-10 lg:mb-0 mb-12">
+        <div className="flex flex-col items-start justify-center sm:gap-10 gap-2 lg:mb-0 mb-12">
           <span className="flex flex-col items-start justify-center gap-10 lg:mb-0 mb-12 lg:h-auto h-[100px]">
             <h1 className="max-w-xl font-quantico text-3xl font-bold leading-tight text-W6 sm:text-4xl lg:text-5xl min-w">
               SOMOS UMA EMPRESA QUE DESENVOLVE{" "}
@@ -67,7 +67,7 @@ export const HeroSection = () => {
           <p className="max-w-3xl font-montserrat text-base font-light text-W2 sm:text-lg md:text-xl lg:text-2xl">
             Somos uma empresa Júnior focada no desenvolvimento de web software.
           </p>
-          <div className="flex flex-row flex-wrap items-center justify-center gap-4 sm:gap-8 lg:gap-12">
+          <div className="flex flex-row flex-wrap items-center justify-center gap-4 sm:gap-8 lg:gap-12 sm:mt-0 mt-10">
             <PrimaryButton>Entrar em Contato</PrimaryButton>
             <span className="flex flex-row items-center justify-center gap-4 sm:gap-6">
               <IconButton src={instagramIcon} label="Instagram" />
