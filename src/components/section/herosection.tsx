@@ -1,10 +1,10 @@
 import {
-    StatCard,
-    IconButton,
-    CyclingText,
-    PrimaryButton,
-    StatCardProps,
-  } from "@/src/components/ui";
+  StatCard,
+  IconButton,
+  CyclingText,
+  PrimaryButton,
+  StatCardProps,
+} from "@/src/components/ui";
 
 import Image from "next/image";
 import { ShieldCheck, Star, BanknoteArrowUp } from "lucide-react";
@@ -41,6 +41,10 @@ const PRODUCTS = [
     id: "mobile-app",
     title: "Aplicações Mobile",
   },
+  {
+    id: "web-application",
+    title: "Aplicações Web",
+  },
 ];
 
 export const HeroSection = () => {
@@ -48,15 +52,18 @@ export const HeroSection = () => {
     <section className="pt-24">
       <div className="w-full flex items-center justify-between xl:px-60 py-30 px-10 flex-col lg:flex-row">
         <div className="flex flex-col items-start justify-center gap-10 lg:mb-0 mb-12">
-          <h1 className="max-w-xl font-quantico text-3xl font-bold leading-tight text-W6 sm:text-4xl lg:text-5xl">
-            SOMOS UMA EMPRESA QUE DESENVOLVE{" "}
-            <span className="text-G5 uppercase">
-              <CyclingText
-                text_list={PRODUCTS.map((product) => product.title)}
-                interval={2500}
-              />
-            </span>
-          </h1>
+          <span className="flex flex-col items-start justify-center gap-10 lg:mb-0 mb-12 lg:h-auto h-[100px]">
+            <h1 className="max-w-xl font-quantico text-3xl font-bold leading-tight text-W6 sm:text-4xl lg:text-5xl min-w">
+              SOMOS UMA EMPRESA QUE DESENVOLVE{" "}
+              <span className="text-G5 uppercase">
+                <CyclingText
+                  text_list={PRODUCTS.map((product) => product.title)}
+                  interval={2500}
+                />
+              </span>
+            </h1>
+          </span>
+
           <p className="max-w-3xl font-montserrat text-base font-light text-W2 sm:text-lg md:text-xl lg:text-2xl">
             Somos uma empresa Júnior focada no desenvolvimento de web software.
           </p>
@@ -71,8 +78,14 @@ export const HeroSection = () => {
 
         <div className="flex items-center justify-center">
           <div className="relative h-auto w-full">
-            <div className="pointer-events-none absolute top-[15%] left-[-10%] size-50 rounded-full bg-[radial-gradient(circle,var(--color-G5)_0%,transparent_50%)] blur-xl mix-blend-screen animate-pulse" />
-            <div className="pointer-events-none absolute bottom-[15%] right-[-10%] size-50 rounded-full bg-[radial-gradient(circle,var(--color-P5)_0%,transparent_50%)] blur-xl mix-blend-screen animate-pulse" />
+            <div className="pointer-events-none absolute top-[15%] left-[-10%] animate-[moveDiagonal_8s_ease-in-out_infinite]">
+              <div className="size-50 rounded-full bg-[radial-gradient(circle,var(--color-G5)_0%,transparent_50%)] blur-xl mix-blend-screen animate-pulse" />
+            </div>
+
+            <div className="pointer-events-none absolute bottom-[15%] right-[-10%] animate-[moveDiagonalReverse_8s_ease-in-out_infinite]">
+              <div className="size-50 rounded-full bg-[radial-gradient(circle,var(--color-P5)_0%,transparent_50%)] blur-xl mix-blend-screen animate-pulse" />
+            </div>
+
             <Image
               className="relative h-auto w-full mix-blend-color-dodge"
               src={knexIcon}
@@ -86,7 +99,7 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      <div className="flex w-full flex-row flex-wrap items-center justify-center gap-6 xl:px-30 pb-30 px-10">
+      <div className="flex w-full flex-row flex-wrap items-center justify-center gap-6 xl:px-30 pb-30 px-6">
         {STAT_CARDS.map(({ title, value, Icon }) => (
           <StatCard key={title} title={title} value={value} Icon={Icon} />
         ))}

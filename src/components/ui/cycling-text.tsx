@@ -1,12 +1,12 @@
 "use client";
 
-import type { CSSProperties, TransitionEvent } from "react";
+import type { CSSProperties } from "react";
 import {
+  useLayoutEffect,
   useCallback,
   useEffect,
-  useLayoutEffect,
-  useRef,
   useState,
+  useRef,
 } from "react";
 
 export type CyclingTextProps = Readonly<{
@@ -15,58 +15,66 @@ export type CyclingTextProps = Readonly<{
 }>;
 
 export function CyclingText({ text_list, interval = 2500 }: CyclingTextProps) {
+  const len = text_list.length;
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [nextIndex, setNextIndex] = useState(1 % (len || 1));
   const [isTransitioning, setIsTransitioning] = useState(false);
+
   const currentRef = useRef<HTMLSpanElement>(null);
   const nextRef = useRef<HTMLSpanElement>(null);
-  const [slotHeight, setSlotHeight] = useState(0);
 
-  const nextIndex =
-    text_list.length > 0 ? (currentIndex + 1) % text_list.length : 0;
+  const [currentHeight, setCurrentHeight] = useState(0);
+  const [nextHeight, setNextHeight] = useState(0);
 
   const measure = useCallback(() => {
-    const h1 = currentRef.current?.getBoundingClientRect().height ?? 0;
-    const h2 = nextRef.current?.getBoundingClientRect().height ?? 0;
-    const next = Math.max(h1, h2);
-    if (next > 0) setSlotHeight(next);
+    const hCurrent = currentRef.current?.getBoundingClientRect().height ?? 0;
+    const hNext = nextRef.current?.getBoundingClientRect().height ?? 0;
+    if (hCurrent > 0) setCurrentHeight(hCurrent);
+    if (hNext > 0) setNextHeight(hNext);
   }, []);
 
   useLayoutEffect(() => {
     const ro = new ResizeObserver(measure);
-    const a = currentRef.current;
-    const b = nextRef.current;
-    if (a) ro.observe(a);
-    if (b) ro.observe(b);
+    if (currentRef.current) ro.observe(currentRef.current);
+    if (nextRef.current) ro.observe(nextRef.current);
     queueMicrotask(measure);
     return () => ro.disconnect();
-  }, [measure]);
+  }, [measure, currentIndex, nextIndex]);
 
   useEffect(() => {
-    if (text_list.length <= 1) return;
-    const timer = setInterval(() => {
+    if (len <= 1) return;
+
+    const TRANSITION_DURATION = 450;
+
+    const loop = setInterval(() => {
       setIsTransitioning(true);
+
+      setTimeout(() => {
+        setCurrentIndex((c) => {
+          const newCurrent = (c + 1) % len;
+          setNextIndex((newCurrent + 1) % len);
+          return newCurrent;
+        });
+        setIsTransitioning(false);
+      }, TRANSITION_DURATION);
     }, interval);
 
-    return () => clearInterval(timer);
-  }, [interval, text_list.length]);
+    return () => clearInterval(loop);
+  }, [interval, len]);
 
-  function handleTransitionEnd(e: TransitionEvent<HTMLSpanElement>) {
-    if (e.propertyName !== "transform") return;
-    setIsTransitioning(false);
-    setCurrentIndex((prev) => (prev + 1) % text_list.length);
-  }
+  const viewportHeight = isTransitioning ? nextHeight : currentHeight;
 
-  const viewportStyle = {
-    ...(slotHeight > 0 ? { height: `${slotHeight}px` } : {}),
-    "--item-h": `${slotHeight}px`,
+  const viewportStyle: CSSProperties = {
+    height: viewportHeight > 0 ? `${viewportHeight}px` : "auto",
+    "--item-h": `${currentHeight}px`,
+    transition: isTransitioning
+      ? `height 450ms ease-in-out`
+      : "none",
   } as CSSProperties;
 
-  const slotStyle =
-    slotHeight > 0 ? ({ minHeight: `${slotHeight}px` } as CSSProperties) : undefined;
+  if (len === 0) return null;
 
-  if (text_list.length === 0) return null;
-
-  if (text_list.length === 1) {
+  if (len === 1) {
     return (
       <span className="inline-block max-w-full min-w-0 align-bottom wrap-break-word uppercase text-G5">
         {text_list[0]}
@@ -80,17 +88,16 @@ export function CyclingText({ text_list, interval = 2500 }: CyclingTextProps) {
       style={viewportStyle}
     >
       <span
-        onTransitionEnd={handleTransitionEnd}
         className={
           isTransitioning
             ? "flex flex-col translate-y-[calc(-1*var(--item-h))] transition-transform duration-450 ease-in-out"
             : "flex flex-col translate-y-0 transition-none"
         }
       >
-        <span ref={currentRef} className="block" style={slotStyle}>
+        <span ref={currentRef} className="block">
           {text_list[currentIndex]}
         </span>
-        <span ref={nextRef} className="block" style={slotStyle}>
+        <span ref={nextRef} className="block">
           {text_list[nextIndex]}
         </span>
       </span>
