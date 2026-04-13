@@ -1,1 +1,1 @@
-export * from "./section/process_section";
+export * from "./section/processSection";
