@@ -1,7 +1,10 @@
+import { ProcessSection } from "../components";
 
 
 export default function Home() {
   return (
-    <section className=""></section>
+    <section className="">
+      <ProcessSection />
+    </section>
   );
 }
