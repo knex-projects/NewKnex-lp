@@ -92,26 +92,27 @@ export const PortfolioSection = () => {
         </header>
 
         <div
-          className="animate-[portfolioReveal_980ms_cubic-bezier(0.22,1,0.36,1)_both] mx-auto mt-[84px] w-[1664px] max-w-full"
+          className="animate-[portfolioReveal_980ms_cubic-bezier(0.22,1,0.36,1)_both] mx-auto mt-10 w-[1664px] max-w-full sm:mt-14 lg:mt-[84px]"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           onFocusCapture={() => setIsPaused(true)}
           onBlurCapture={() => setIsPaused(false)}
         >
-          <div className="flex h-[284px] items-center">
+          <div className="flex h-auto items-center sm:h-[284px]">
             <CarouselNavButton
               direction="previous"
               ariaLabel="Mostrar projeto anterior"
               onClick={goToPrevious}
+              className="hidden sm:grid"
             />
 
-            <div className="mx-4 h-full w-full overflow-hidden sm:mx-6 lg:mx-[52px] lg:w-[1440px] lg:max-w-[calc(100%-224px)]">
+            <div className="h-[220px] w-full overflow-hidden sm:mx-6 sm:h-full lg:mx-[52px] lg:w-[1440px] lg:max-w-[calc(100%-224px)]">
               <Carousel
                 setApi={setCarouselApi}
                 opts={{ align: "start", loop: true }}
                 className="h-full w-full"
               >
-                <CarouselContent className="h-full gap-6">
+                <CarouselContent className="h-full gap-4 sm:gap-6">
                   {PORTFOLIO_PROJECTS.map((project) => (
                     <CarouselItem
                       key={project.id}
@@ -128,6 +129,22 @@ export const PortfolioSection = () => {
               direction="next"
               ariaLabel="Mostrar próximo projeto"
               onClick={goToNext}
+              className="hidden sm:grid"
+            />
+          </div>
+
+          <div className="mt-4 flex items-center justify-center gap-4 sm:hidden">
+            <CarouselNavButton
+              direction="previous"
+              ariaLabel="Mostrar projeto anterior"
+              onClick={goToPrevious}
+              className="size-[52px]"
+            />
+            <CarouselNavButton
+              direction="next"
+              ariaLabel="Mostrar próximo projeto"
+              onClick={goToNext}
+              className="size-[52px]"
             />
           </div>
         </div>
