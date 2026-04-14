@@ -1,5 +1,9 @@
+import { HeroSection } from "@/src/components";
+
 export default function Home() {
   return (
-    <section className=""></section>
+    <main className="bg-BackGround">
+      <HeroSection />
+    </main>
   );
 }
