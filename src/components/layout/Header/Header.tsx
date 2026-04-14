@@ -4,7 +4,7 @@ import logoKnex from "@/public/assets/logo/logo-knex.svg"
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
-import { IoClose, IoMenu } from "react-icons/io5"
+import { IoMenu, IoClose } from "react-icons/io5"
 import MenuItem from "./MenuItem"
 
 export default function Header() {
@@ -15,7 +15,7 @@ export default function Header() {
     }
 
     return (
-        <header className={ `w-full px-6 py-10 bg-BackGround md: md:px-60 ${ openMenu ? "fixed" : "static" }` }>
+        <header className={ `z-100 w-full px-6 py-10 bg-BackGround lg:px-10 xl:px-60 ${ openMenu ? "fixed" : "static" }` }>
             <nav className="flex items-center justify-between">
                 
             <Link href="/">
@@ -38,10 +38,10 @@ export default function Header() {
                         text="FAQ"
                         closeMenu={ closeMenu }
                     />
-                    <li>
+                    <li className="md:hidden">
                         <Link
                             href="/contatos"
-                            className="inline-block w-10/12 px-8 py-6 rounded-sm bg-G4 font-[Quantico] font-bold text-Gg0 hover:bg-white ease-in-out duration-300 md:hidden md:text-2xl"
+                            className="inline-block w-10/12 px-8 py-6 rounded-sm bg-G4 font-[Quantico] font-bold text-Gg0 hover:bg-white ease-in-out duration-300 md:text-2xl"
                             onClick={ closeMenu }
                         >
                             Entrar em Contato
@@ -49,15 +49,18 @@ export default function Header() {
                     </li>
                 </ul>
 
-                <Link href="/contatos" className="hidden rounded-sm px-8 py-4 bg-G4 font-[Quantico] font-bold text-Gg0 hover:bg-white ease-in-out duration-300 md:inline-block md:text-2xl" >Entrar em Contato</Link>
+                <Link href="/contatos" className="hidden rounded-sm px-8 py-4 bg-G4 font-[Quantico] font-bold text-nowrap text-Gg0 hover:bg-white ease-in-out duration-300 md:inline-block md:text-xl lg:text-2xl" >Entrar em Contato</Link>
 
                 <button 
-                    className="flex justify-center items-center gap-2 px-4 py-3 relative bg-Footer border border-P2 rounded-sm font-[Quantico] text-white md:hidden"
+                    className="flex justify-between items-center gap-2 px-4 py-3 max-w-30 bg-Footer border border-P2 rounded-sm font-[Quantico] text-white md:hidden"
                     onClick={() => {
                         setOpenMenu(!openMenu)
                     }}
                 >
-                    Menu
+                    <div className="flex justify-center items-center relative w-12.5">
+                        <p className={ `absolute transition ease-out duration-300 ${ openMenu ? "opacity-100" : "opacity-0" }` }>Fechar</p>
+                        <p className={ `absolute transition ease-out duration-300 ${ openMenu ? "opacity-0" : "opacity-100" }` }>Menu</p>
+                    </div>
 
                     <div className="flex justify-center items-center relative w-6 h-6" >    
                         <IoClose className={ `absolute text-G5 text-2xl transition ease-out duration-300 ${ openMenu ? "opacity-100" : "opacity-0" }` } />

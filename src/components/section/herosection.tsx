@@ -49,7 +49,7 @@ const PRODUCTS = [
 
 export const HeroSection = () => {
   return (
-    <section className="pt-24">
+    <section>
       <div className="w-full flex items-center justify-between xl:px-60 py-30 px-10 flex-col lg:flex-row">
         <div className="flex flex-col items-start justify-center sm:gap-10 gap-2 lg:mb-0 mb-12">
           <span className="flex flex-col items-start justify-center gap-10 lg:mb-0 mb-12 lg:h-auto h-[100px]">
