@@ -50,7 +50,7 @@ const PORTFOLIO_PROJECTS: PortfolioProjectCardData[] = [
 ];
 
 const AUTO_ROTATE_MS = 5200;
-const INFINITE_PORTFOLIO_PROJECTS = [...PORTFOLIO_PROJECTS, ...PORTFOLIO_PROJECTS];
+const INFINITE_PORTFOLIO_PROJECTS = PORTFOLIO_PROJECTS.concat(PORTFOLIO_PROJECTS);
 
 export const PortfolioSection = () => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
@@ -86,7 +86,7 @@ export const PortfolioSection = () => {
         <header className="animate-[portfolioReveal_820ms_cubic-bezier(0.22,1,0.36,1)_both]">
           <h2
             id="portfolio-heading"
-            className="font-quantico text-4xl leading-tight text-W6 sm:text-5xl lg:text-[48px] xl:pl-32"
+            className="font-quantico font-quantico text-[34px] font-bold leading-tight text-W6 sm:text-[40px] lg:text-[48px] xl:pl-32"
           >
             Confira nosso <span className="text-G5">portfólio</span>
           </h2>
