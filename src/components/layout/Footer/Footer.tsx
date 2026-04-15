@@ -53,7 +53,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <p className="mt-27.5 text-xs text-center text-W4 md:text-start">Todos os direitos reservados. © Knex Consultoria.</p>
+            <p className="mt-27.5 text-xs text-center text-W4 md:text-start md:text-lg">Todos os direitos reservados. © Knex Consultoria.</p>
         </footer>
     )
 }
