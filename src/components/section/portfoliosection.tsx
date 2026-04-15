@@ -50,6 +50,7 @@ const PORTFOLIO_PROJECTS: PortfolioProjectCardData[] = [
 ];
 
 const AUTO_ROTATE_MS = 5200;
+const INFINITE_PORTFOLIO_PROJECTS = [...PORTFOLIO_PROJECTS, ...PORTFOLIO_PROJECTS];
 
 export const PortfolioSection = () => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
@@ -106,17 +107,17 @@ export const PortfolioSection = () => {
               className="hidden sm:grid"
             />
 
-            <div className="h-[220px] w-full overflow-hidden sm:mx-6 sm:h-full lg:mx-[52px] lg:w-[1440px] lg:max-w-[calc(100%-224px)]">
+            <div className="h-[220px] w-full overflow-hidden sm:mx-6 sm:h-full lg:mx-[52px] lg:max-w-[calc(100%-224px)]">
               <Carousel
                 setApi={setCarouselApi}
                 opts={{ align: "start", loop: true }}
                 className="h-full w-full"
               >
-                <CarouselContent className="h-full gap-4 sm:gap-6">
-                  {PORTFOLIO_PROJECTS.map((project) => (
+                <CarouselContent className="-ml-4 h-full sm:-ml-6">
+                  {INFINITE_PORTFOLIO_PROJECTS.map((project, index) => (
                     <CarouselItem
-                      key={project.id}
-                      className="h-full basis-full sm:basis-[calc((100%-24px)/2)] lg:basis-auto lg:w-[464px]"
+                      key={`${project.id}-${index}`}
+                      className="h-full basis-full pl-4 sm:basis-1/2 sm:pl-6 lg:basis-1/3"
                     >
                       <PortfolioProjectCard project={project} />
                     </CarouselItem>
