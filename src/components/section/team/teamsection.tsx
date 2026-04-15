@@ -11,6 +11,9 @@ const INFINITE_TEAM_MEMBERS = TEAM_MEMBERS.concat(TEAM_MEMBERS);
 
 export const TeamSection = () => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
+  const [brokenImageKeys, setBrokenImageKeys] = useState<Set<string>>(
+    () => new Set<string>(),
+  );
 
   useEffect(() => {
     if (!carouselApi) return;
@@ -47,34 +50,54 @@ export const TeamSection = () => {
             className="h-full w-full"
           >
             <CarouselContent className="-ml-4 h-full sm:-ml-6">
-              {INFINITE_TEAM_MEMBERS.map((member, index) => (
-                <CarouselItem
-                  key={`${member.id}-${index}`}
-                  className="h-full basis-[88%] pl-4 sm:basis-[312px] sm:pl-6"
-                >
-                  <article className="group w-full">
-                    <div className="relative aspect-[312/382] w-full overflow-hidden bg-B1">
-                      <Image
-                        src={member.image || FALLBACK_TEAM_IMAGE}
-                        alt={`Foto de ${member.name}`}
-                        fill
-                        loading={index === 0 ? "eager" : "lazy"}
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        sizes="(max-width: 639px) 88vw, 312px"
-                      />
-                    </div>
+              {INFINITE_TEAM_MEMBERS.map((member, index) => {
+                const itemKey = `${member.id}-${index}`;
+                const shouldUseFallback =
+                  !member.image || brokenImageKeys.has(itemKey);
+                const imageSrc = shouldUseFallback
+                  ? FALLBACK_TEAM_IMAGE
+                  : member.image;
 
-                    <div className="pt-4 text-center sm:pt-5">
-                      <h3 className="text-center font-montserrat text-[20px] font-bold leading-tight text-W6 sm:text-[24px]">
-                        {member.name}
-                      </h3>
-                      <p className="mt-1 whitespace-pre-line text-center font-quantico text-[14px] font-normal leading-tight text-G5 sm:text-[16px]">
-                        {member.role}
-                      </p>
-                    </div>
-                  </article>
-                </CarouselItem>
-              ))}
+                return (
+                  <CarouselItem
+                    key={itemKey}
+                    className="h-full basis-[88%] pl-4 sm:basis-[312px] sm:pl-6"
+                  >
+                    <article className="group w-full">
+                      <div className="relative aspect-[312/382] w-full overflow-hidden bg-B1">
+                        <Image
+                          src={imageSrc}
+                          alt={`Foto de ${member.name}`}
+                          fill
+                          loading={index === 0 ? "eager" : "lazy"}
+                          onError={() => {
+                            if (shouldUseFallback) return;
+
+                            setBrokenImageKeys((previous) => {
+                              if (previous.has(itemKey)) return previous;
+
+                              const next = new Set(previous);
+                              next.add(itemKey);
+                              return next;
+                            });
+                          }}
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          sizes="(max-width: 639px) 88vw, 312px"
+                        />
+                      </div>
+
+                      <div className="pt-4 text-center sm:pt-5">
+                        <h3 className="text-center font-montserrat text-[20px] font-bold leading-tight text-W6 sm:text-[24px]">
+                          {member.name}
+                        </h3>
+                        <p className="mt-1 whitespace-pre-line text-center font-quantico text-[14px] font-normal leading-tight text-G5 sm:text-[16px]">
+                          {member.role}
+                        </p>
+                      </div>
+                    </article>
+                  </CarouselItem>
+                );
+              })}
             </CarouselContent>
           </Carousel>
         </div>
