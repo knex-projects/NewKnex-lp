@@ -7,7 +7,6 @@ import { TEAM_MEMBERS } from "./team.data";
 
 const AUTO_ROTATE_MS = 2400;
 const FALLBACK_TEAM_IMAGE = "/assets/icons/knex.svg";
-const INFINITE_TEAM_MEMBERS = TEAM_MEMBERS.concat(TEAM_MEMBERS);
 
 export const TeamSection = () => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
@@ -33,7 +32,7 @@ export const TeamSection = () => {
       className="relative overflow-hidden px-6 pb-24 sm:px-10 sm:pb-28 lg:px-16 lg:pb-36 xl:px-30"
       aria-labelledby="team-heading"
     >
-      <div className="mx-auto flex w-full max-w-[1700px] flex-col">
+      <div className="mx-auto flex w-full max-w-[1920px] flex-col">
         <header className="animate-[portfolioReveal_820ms_cubic-bezier(0.22,1,0.36,1)_both]">
           <h2
             id="team-heading"
@@ -43,14 +42,14 @@ export const TeamSection = () => {
           </h2>
         </header>
 
-        <div className="animate-[portfolioReveal_980ms_cubic-bezier(0.22,1,0.36,1)_both] mx-auto mt-10 w-[1664px] max-w-full sm:mt-14 lg:mt-[84px]">
+        <div className="animate-[portfolioReveal_980ms_cubic-bezier(0.22,1,0.36,1)_both] relative left-1/2 mt-10 w-[min(1916px,calc(100vw-32px))] -translate-x-1/2 sm:mt-14 lg:mt-[84px]">
           <Carousel
             setApi={setCarouselApi}
-            opts={{ align: "start", loop: true }}
+            opts={{ align: "start", loop: true, watchDrag: false }}
             className="h-full w-full"
           >
-            <CarouselContent className="-ml-4 h-full sm:-ml-6">
-              {INFINITE_TEAM_MEMBERS.map((member, index) => {
+            <CarouselContent className="-ml-8 h-full sm:-ml-10">
+              {TEAM_MEMBERS.map((member, index) => {
                 const itemKey = `${member.id}-${index}`;
                 const shouldUseFallback =
                   !member.image || brokenImageKeys.has(itemKey);
@@ -61,10 +60,10 @@ export const TeamSection = () => {
                 return (
                   <CarouselItem
                     key={itemKey}
-                    className="h-full basis-[88%] pl-4 sm:basis-[312px] sm:pl-6"
+                    className="h-full basis-auto pl-8 sm:pl-10"
                   >
-                    <article className="group w-full">
-                      <div className="relative aspect-[312/382] w-full overflow-hidden bg-B1">
+                    <article className="group w-[312px]">
+                      <div className="relative h-[382px] w-[312px] overflow-hidden bg-B1">
                         <Image
                           src={imageSrc}
                           alt={`Foto de ${member.name}`}
@@ -82,7 +81,7 @@ export const TeamSection = () => {
                             });
                           }}
                           className="object-cover transition-transform duration-500 group-hover:scale-105"
-                          sizes="(max-width: 639px) 88vw, 312px"
+                          sizes="312px"
                         />
                       </div>
 
