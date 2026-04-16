@@ -36,19 +36,19 @@ export const TeamSection = () => {
         <header className="animate-[portfolioReveal_820ms_cubic-bezier(0.22,1,0.36,1)_both]">
           <h2
             id="team-heading"
-            className="text-center font-quantico text-[34px] font-bold leading-tight text-W6 sm:text-[40px] lg:text-[48px]"
+            className="whitespace-nowrap text-center font-quantico text-[32px] font-bold leading-tight text-W6 sm:text-[40px] lg:text-[48px]"
           >
             Conheça a nossa <span className="text-G5">equipe</span>
           </h2>
         </header>
 
-        <div className="animate-[portfolioReveal_980ms_cubic-bezier(0.22,1,0.36,1)_both] relative left-1/2 mt-10 w-[min(1916px,calc(100vw-32px))] -translate-x-1/2 sm:mt-14 lg:mt-[84px]">
+        <div className="animate-[portfolioReveal_980ms_cubic-bezier(0.22,1,0.36,1)_both] relative left-1/2 mt-10 w-[min(1916px,100vw)] -translate-x-1/2 sm:mt-14 sm:w-[min(1916px,calc(100vw-32px))] lg:mt-[84px]">
           <Carousel
             setApi={setCarouselApi}
-            opts={{ align: "start", loop: true, watchDrag: false }}
+            opts={{ align: "start", loop: true}}
             className="h-full w-full"
           >
-            <CarouselContent className="-ml-8 h-full sm:-ml-10">
+            <CarouselContent className="-ml-2 h-full sm:-ml-10">
               {TEAM_MEMBERS.map((member, index) => {
                 const itemKey = `${member.id}-${index}`;
                 const shouldUseFallback =
@@ -60,15 +60,15 @@ export const TeamSection = () => {
                 return (
                   <CarouselItem
                     key={itemKey}
-                    className="h-full basis-auto pl-8 sm:pl-10"
+                    className="h-full basis-auto pl-2 sm:pl-10"
                   >
-                    <article className="group w-[312px]">
-                      <div className="relative h-[382px] w-[312px] overflow-hidden bg-B1">
+                    <article className="group w-[160px] sm:w-[312px]">
+                      <div className="relative h-[166px] w-[160px] overflow-hidden bg-B1 sm:h-[382px] sm:w-[312px]">
                         <Image
                           src={imageSrc}
                           alt={`Foto de ${member.name}`}
                           fill
-                          loading={index === 0 ? "eager" : "lazy"}
+                          loading="eager"
                           onError={() => {
                             if (shouldUseFallback) return;
 
@@ -81,15 +81,15 @@ export const TeamSection = () => {
                             });
                           }}
                           className="object-cover transition-transform duration-500 group-hover:scale-105"
-                          sizes="312px"
+                          sizes="(max-width: 639px) 160px, 312px"
                         />
                       </div>
 
-                      <div className="pt-4 text-center sm:pt-5">
-                        <h3 className="text-center font-montserrat text-[20px] font-bold leading-tight text-W6 sm:text-[24px]">
+                      <div className="pt-3 text-center sm:pt-5">
+                        <h3 className="text-center font-montserrat text-[16px] font-bold leading-tight text-W6 sm:text-[24px]">
                           {member.name}
                         </h3>
-                        <p className="mt-1 whitespace-pre-line text-center font-quantico text-[14px] font-normal leading-tight text-G5 sm:text-[16px]">
+                        <p className="mt-1 whitespace-pre-line text-center font-quantico text-[12px] font-normal leading-tight text-G5 sm:text-[16px]">
                           {member.role}
                         </p>
                       </div>

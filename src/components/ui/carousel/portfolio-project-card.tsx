@@ -17,12 +17,15 @@ type PortfolioProjectCardProps = Readonly<{
 }>;
 
 export const PortfolioProjectCard = ({ project }: PortfolioProjectCardProps) => {
+  const shouldLoadEagerly = project.id === "eventflow";
+
   return (
     <article className="group relative h-[220px] overflow-hidden sm:h-[284px]">
       <Image
         src={project.logo}
         alt={`Projeto ${project.title}`}
         fill
+        loading={shouldLoadEagerly ? "eager" : "lazy"}
         className="object-cover transition-[filter] duration-500 md:group-hover:blur-[2px]"
         sizes="(max-width: 767px) 86vw, (max-width: 1279px) 44vw, 464px"
       />
