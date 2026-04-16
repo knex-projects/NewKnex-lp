@@ -50,7 +50,7 @@ const PORTFOLIO_PROJECTS: PortfolioProjectCardData[] = [
 ];
 
 const AUTO_ROTATE_MS = 5200;
-const INFINITE_PORTFOLIO_PROJECTS = [...PORTFOLIO_PROJECTS, ...PORTFOLIO_PROJECTS];
+const INFINITE_PORTFOLIO_PROJECTS = PORTFOLIO_PROJECTS.concat(PORTFOLIO_PROJECTS);
 
 export const PortfolioSection = () => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
@@ -86,7 +86,7 @@ export const PortfolioSection = () => {
         <header className="animate-[portfolioReveal_820ms_cubic-bezier(0.22,1,0.36,1)_both]">
           <h2
             id="portfolio-heading"
-            className="font-quantico text-4xl leading-tight text-W6 sm:text-5xl lg:text-[48px] xl:pl-32"
+            className="whitespace-nowrap text-center font-quantico text-[32px] font-bold leading-tight text-W6 sm:text-left sm:text-[40px] lg:text-[48px] xl:pl-32"
           >
             Confira nosso <span className="text-G5">portfólio</span>
           </h2>
@@ -99,15 +99,15 @@ export const PortfolioSection = () => {
           onFocusCapture={() => setIsPaused(true)}
           onBlurCapture={() => setIsPaused(false)}
         >
-          <div className="flex h-auto items-center sm:h-[284px]">
+          <div className="flex items-start sm:h-[282px] sm:items-center">
             <CarouselNavButton
               direction="previous"
               ariaLabel="Mostrar projeto anterior"
               onClick={goToPrevious}
-              className="hidden sm:grid"
+              className="mt-[76px] !size-[40px] sm:mt-0 sm:!size-[60px]"
             />
 
-            <div className="h-[220px] w-full overflow-hidden sm:mx-6 sm:h-full lg:mx-[52px] lg:max-w-[calc(100%-224px)]">
+            <div className="w-full overflow-hidden sm:mx-6 sm:h-full lg:mx-[52px] lg:max-w-[calc(100%-224px)]">
               <Carousel
                 setApi={setCarouselApi}
                 opts={{ align: "start", loop: true }}
@@ -117,7 +117,7 @@ export const PortfolioSection = () => {
                   {INFINITE_PORTFOLIO_PROJECTS.map((project, index) => (
                     <CarouselItem
                       key={`${project.id}-${index}`}
-                      className="h-full basis-full pl-4 sm:basis-1/2 sm:pl-6 lg:basis-1/3"
+                      className="h-full basis-full pl-4 sm:basis-1/2 sm:pl-6 lg:basis-auto"
                     >
                       <PortfolioProjectCard project={project} />
                     </CarouselItem>
@@ -130,22 +130,7 @@ export const PortfolioSection = () => {
               direction="next"
               ariaLabel="Mostrar próximo projeto"
               onClick={goToNext}
-              className="hidden sm:grid"
-            />
-          </div>
-
-          <div className="mt-4 flex items-center justify-center gap-4 sm:hidden">
-            <CarouselNavButton
-              direction="previous"
-              ariaLabel="Mostrar projeto anterior"
-              onClick={goToPrevious}
-              className="size-[52px]"
-            />
-            <CarouselNavButton
-              direction="next"
-              ariaLabel="Mostrar próximo projeto"
-              onClick={goToNext}
-              className="size-[52px]"
+              className="mt-[76px] !size-[40px] sm:mt-0 sm:!size-[60px]"
             />
           </div>
         </div>
