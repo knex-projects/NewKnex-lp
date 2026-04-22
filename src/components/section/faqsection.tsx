@@ -77,9 +77,11 @@ export const FAQSection = () => {
                     {faq.question}
                   </h3>
                   
-                  {/* Icon (Animated crossfade) */}
-                  <div className="relative w-[34px] h-[43px] flex items-center justify-center">
-                    {/* Open SVG */}
+                  <div className="hidden lg:block relative">
+                    <Image src={faqMobileOpenIcon} alt="Abrir" width={34} height={46} />
+                  </div>
+                  
+                  <div className="relative w-[34px] h-[43px] flex items-center justify-center lg:hidden">
                     <Image 
                       src={faqMobileOpenIcon}
                       alt="Fechar"
