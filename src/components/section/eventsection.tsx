@@ -68,10 +68,10 @@ function EventHoverCard({ item }: { readonly item: EventItem }) {
           aria-hidden
         />
         <div className="absolute bottom-3 left-3 z-10 max-w-[90%] drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)] sm:bottom-4 sm:left-4">
-          <p className="font-quantico text-lg font-bold text-white sm:text-xl">
+          <p className="font-quantico text-lg font-bold text-white sm:text-[32px]	">
             {item.title}
           </p>
-          <p className="font-montserrat text-sm font-light text-white/90">
+          <p className="font-montserrat text-[24px] font-light text-white/90">
             {item.year}
           </p>
         </div>
