@@ -11,6 +11,9 @@ export const portfolioEventFlowLogo = "/assets/logos/eventflow.png";
 export const portfolioGrDesignLogo = "/assets/logos/grdesign.png";
 export const portfolioIrisComunicaLogo = "/assets/logos/iriscomunica.png";
 
+export const pbJuniorLogo = "/assets/logos/pb-junior.svg";
+export const brasilJuniorLogo = "/assets/logos/brasil-junior.svg";
+
 export const teamGeraldezPhoto = "/assets/team/geraldez.JPG";
 export const teamJennyferPhoto = "/assets/team/jennyfer.JPG";
 export const teamRaimundoPhoto = "/assets/team/raimundo.png";

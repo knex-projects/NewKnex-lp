@@ -71,14 +71,11 @@ export const FAQSection = () => {
                     {faq.question}
                   </h3>
                   
-                  {/* Desktop Icon (Always Open) */}
                   <div className="hidden lg:block relative">
                     <Image src={faqDesktopOpenIcon} alt="Abrir" width={34} height={46} />
                   </div>
                   
-                  {/* Mobile Icon (Animated crossfade) */}
                   <div className="relative w-[34px] h-[43px] flex items-center justify-center lg:hidden">
-                    {/* Open SVG */}
                     <Image 
                       src={faqMobileOpenIcon}
                       alt="Fechar"
@@ -86,7 +83,6 @@ export const FAQSection = () => {
                       className={`absolute transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-50'}`}
                     />
 
-                    {/* Closed SVG */}
                     <Image 
                       src={faqMobileClosedIcon}
                       alt="Abrir"
@@ -96,7 +92,6 @@ export const FAQSection = () => {
                   </div>
                 </div>
                 
-                {/* Animated Accordion Body */}
                 <div 
                   className={`grid transition-[grid-template-rows,opacity] duration-300 ease-in-out w-full lg:grid-rows-[1fr] lg:opacity-100 ${
                     isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
