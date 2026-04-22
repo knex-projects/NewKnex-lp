@@ -1,5 +1,9 @@
-export default function FAQ(){
-    return(
-        <section></section>
-    )
+import { FAQSection } from "@/src/components";
+
+export default function FAQPage() {
+  return (
+    <main className="bg-BackGround">
+      <FAQSection />
+    </main>
+  );
 }
