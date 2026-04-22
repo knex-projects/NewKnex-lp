@@ -54,14 +54,14 @@ const EVENT_ITEMS: EventItem[] = [
 
 function EventHoverCard({ item }: { readonly item: EventItem }) {
   return (
-    <div className="group relative h-44 w-full overflow-hidden rounded-xl shadow-sm sm:h-52">
+    <div className="group relative mx-auto h-[192px] w-full overflow-hidden rounded-xl shadow-sm sm:h-[282px] lg:w-[464px]">
       <div className="absolute inset-0 z-0 opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100">
         <Image
           src={item.img_bg}
           alt=""
           fill
           className="object-cover"
-          sizes="(max-width: 640px) 90vw, 360px"
+          sizes="(max-width: 639px) 90vw, (max-width: 1023px) 44vw, 464px"
         />
         <div
           className="pointer-events-none absolute inset-0 bg-linear-to-b from-G5/50 from-5% via-G5/15 via-28% to-transparent to-58%"
@@ -85,7 +85,7 @@ function EventHoverCard({ item }: { readonly item: EventItem }) {
           height={120}
           unoptimized
           sizes="240px"
-          className={`h-auto max-h-18 w-auto max-w-[90%] object-contain sm:max-h-21 ${item.logoImgClassName ?? ""}`}
+          className={`h-auto max-h-20 w-auto max-w-[90%] object-contain sm:max-h-28 ${item.logoImgClassName ?? ""}`}
         />
       </div>
     </div>
@@ -122,43 +122,43 @@ export const EventSection = () => {
   return (
     <section
       id="eventos"
-      className="bg-BackGround px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24"
+      className="bg-BackGround px-4 py-16 sm:px-6 sm:py-20 px-10"
       aria-labelledby="eventos-heading"
     >
-      <div className="mx-auto flex w-full max-w-[1200px] flex-col">
+      <div className="mx-auto flex w-full max-w-[1700px] flex-col">
         <h2
           id="eventos-heading"
-          className="text-center font-quantico text-2xl font-bold text-white sm:text-3xl lg:text-4xl"
+          className="text-center font-quantico text-[32px] font-bold text-W6 lg:text-[48px]"
         >
-          Eventos que <span className="text-G5">nós participamos</span>
+          Eventos que nós participamos
         </h2>
 
         <div
-          className="mx-auto mt-10 w-full max-w-[1100px] sm:mt-14"
+          className="mx-auto mt-10 w-[1664px] max-w-full sm:mt-14 lg:mt-[84px]"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           onFocusCapture={() => setIsPaused(true)}
           onBlurCapture={() => setIsPaused(false)}
         >
-          <div className="flex items-center gap-3 sm:gap-4 md:gap-6">
+          <div className="flex items-start sm:h-[282px] sm:items-center">
             <CarouselNavButton
               direction="previous"
               ariaLabel="Evento anterior"
               onClick={goToPrevious}
-              className="!size-11 shrink-0 border-2 sm:!size-12 md:!size-14"
+              className="mt-[76px] !size-[40px] sm:mt-0 sm:!size-[60px]"
             />
 
-            <div className="min-w-0 flex-1 overflow-hidden">
+            <div className="w-full overflow-hidden sm:mx-6 sm:h-full lg:mx-[52px] lg:max-w-[calc(100%-224px)]">
               <Carousel
                 setApi={setCarouselApi}
                 opts={{ align: "start", loop: true }}
-                className="w-full"
+                className="h-full w-full"
               >
-                <CarouselContent className="-ml-3 sm:-ml-4 md:-ml-5">
+                <CarouselContent className="-ml-4 h-full sm:-ml-6">
                   {LOOP_ITEMS.map((item, index) => (
                     <CarouselItem
                       key={`${item.id}-${index}`}
-                      className="basis-[88%] pl-3 sm:basis-1/2 sm:pl-4 md:basis-1/3 md:pl-5"
+                      className="h-full basis-full pl-4 sm:basis-1/2 sm:pl-6 lg:basis-auto"
                     >
                       <EventHoverCard item={item} />
                     </CarouselItem>
@@ -171,7 +171,7 @@ export const EventSection = () => {
               direction="next"
               ariaLabel="Próximo evento"
               onClick={goToNext}
-              className="!size-11 shrink-0 border-2 sm:!size-12 md:!size-14"
+              className="mt-[76px] !size-[40px] sm:mt-0 sm:!size-[60px]"
             />
           </div>
         </div>
