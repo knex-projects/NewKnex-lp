@@ -27,7 +27,7 @@ export const ProcessSection = () => {
       title: "Finalização",
       cardTitle: "Projeto no Ar",
       description:
-        "Por último, você recebe o projeto pronto para o mundo. Nossa equipe garante que cada aspecto esteja ajustado e otimizado.",
+        "Por último, você recebe o projeto pronto para o mundo. Nossa equipe garante que cada aspecto esteja ajustado e otimizado, com cada detalhe e alinhado às suas necessidades e expectativas.",
       icon: (
         <Rocket className="w-6 h-6 lg:w-24 lg:h-24 text-P3 group-hover:text-G3 transition-all duration-300" />
       ),
@@ -38,7 +38,7 @@ export const ProcessSection = () => {
     <section className="bg-BackGround flex flex-col items-center justify-center py-16 lg:min-h-[1006px] lg:py-0">
       <div className="container mx-auto flex flex-col items-center justify-center gap-10 px-4 lg:gap-20">
         
-        <h2 className="text-2xl sm:text-3xl font-bold text-center font-quantico text-white">
+        <h2 className="text-2xl sm:text-3xl text-start font-bold lg:text-center font-quantico text-white">
           Entenda nosso <span className="text-G4">processo</span>
         </h2>
 
@@ -49,12 +49,23 @@ export const ProcessSection = () => {
             z-0"
           />
 
-          {PROCESS_STEPS.map((step) => (
+          {PROCESS_STEPS.map((step, index) => {
+            const isFirst = index === 0;
+            const isLast = index === PROCESS_STEPS.length - 1;
+            let lineEdges = "-top-10 -bottom-10";
+            if (isFirst) lineEdges = "top-1/2 -bottom-10";
+            if (isLast) lineEdges = "-top-10 bottom-1/2";
+
+            return (
             <div
               key={step.id}
-              className="flex flex-row lg:flex-col items-center justify-center gap-4 w-full max-w-[500px]"
+              className="relative flex flex-row lg:flex-col items-center justify-center gap-4 w-full max-w-[500px]"
             >
-              <h1 className="relative z-10 flex items-center justify-center rounded-full bg-P1 text-P5 font-bold font-quantico
+              <div
+                className={`pointer-events-none absolute z-0 w-1 bg-P1 lg:hidden left-[20px] sm:left-[24px] md:left-13 ${lineEdges}`}
+                aria-hidden
+              />
+              <h1 className="relative z-10 flex shrink-0 items-center justify-center rounded-full bg-P1 text-P5 font-bold font-quantico
                 w-10 h-10 text-xl
                 sm:w-12 sm:h-12 sm:text-2xl
                 lg:w-[56px] lg:h-[56px] lg:text-4xl">
@@ -92,16 +103,16 @@ export const ProcessSection = () => {
                   {step.icon}
                 </div>
 
-                <p className="font-montserrat font-light text-white text-center
+                <p className="font-montserrat font-light text-white text-start
                   text-[0.82rem] sm:text-base
                   leading-relaxed
-                  lg:text-[0.82rem] lg:leading-snug
+                  lg:text-[0.82rem] lg:leading-snug lg:text-center
                   xl:text-[1rem] 2xl:leading-relaxed">
                   {step.description}
                 </p>
               </div>
             </div>
-          ))}
+          ); })}
         </div>
       </div>
     </section>
