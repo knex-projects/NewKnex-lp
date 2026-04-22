@@ -2,6 +2,10 @@ export const knexIcon = "/assets/icons/knex.svg";
 export const linkedinIcon = "/assets/icons/linkedin.svg";
 export const instagramIcon = "/assets/icons/instagram.svg";
 
+export const faqDesktopOpenIcon = "/assets/icons/faq-desktop-open.svg";
+export const faqMobileOpenIcon = "/assets/icons/faq-mobile-open.svg";
+export const faqMobileClosedIcon = "/assets/icons/faq-mobile-closed.svg";
+
 export const portfolioViisercompLogo = "/assets/logos/viisercomp.png";
 export const portfolioEventFlowLogo = "/assets/logos/eventflow.png";
 export const portfolioGrDesignLogo = "/assets/logos/grdesign.png";
