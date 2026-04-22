@@ -37,4 +37,4 @@ export const teamBeatrizPhoto = "/assets/team/beatriz.JPG";
 export const teamClarissaPhoto = "/assets/team/clarissa.JPG";
 export const teamLaisPhoto = "/assets/team/lais.JPG";
 
-export const teamKnex = "/assets/fotos/time-knex.svg"
+export const teamKnex = "/assets/photos/time-knex.svg"
