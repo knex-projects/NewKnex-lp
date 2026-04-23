@@ -1,5 +1,10 @@
+import { AboutUsSection, MovementsSection } from "@/src/components";
+
 export default function Sobre() {
     return (
-        <section className=""></section>
+        <main className="bg-BackGround">
+            <AboutUsSection />
+            <MovementsSection />
+        </main>
     )
 }
