@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { faqDesktopOpenIcon, faqMobileOpenIcon, faqMobileClosedIcon } from "@/public/assets";
+import { faqMobileOpenIcon, faqMobileClosedIcon } from "@/public/assets";
 export const FAQSection = () => {
   const faqs = [
     {
@@ -59,25 +59,20 @@ export const FAQSection = () => {
             return (
               <div
                 key={index}
-                className={`w-[360px] lg:w-full lg:max-w-[1440px] flex flex-col lg:gap-[8px] justify-center rounded-[8px] ${
+                className={`w-[360px] max-w-full min-[430px]:w-full lg:max-w-[1440px] flex flex-col lg:gap-[8px] justify-center rounded-[8px] ${
                   isAlternate ? "bg-[var(--color-BackGround)]" : "bg-[var(--color-P1)]"
                 }`}
               >
                 <div 
-                  className="h-[96px] lg:h-[118px] px-[24px] flex justify-between items-center w-full cursor-pointer lg:cursor-default"
+                  className="h-[96px] lg:h-[118px] px-[24px] flex justify-between items-center w-full cursor-pointer"
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                 >
                   <h3 className="font-montserrat font-semibold text-[18px] lg:text-[24px] text-[var(--color-P5)]">
                     {faq.question}
                   </h3>
                   
-                  {/* Desktop Icon (Always Open) */}
-                  <div className="hidden lg:block relative">
-                    <Image src={faqDesktopOpenIcon} alt="Abrir" width={34} height={46} />
-                  </div>
-                  
-                  {/* Mobile Icon (Animated crossfade) */}
-                  <div className="relative w-[34px] h-[43px] flex items-center justify-center lg:hidden">
+                  {/* Icon (Animated crossfade) */}
+                  <div className="relative w-[34px] h-[43px] flex items-center justify-center">
                     {/* Open SVG */}
                     <Image 
                       src={faqMobileOpenIcon}
@@ -98,7 +93,7 @@ export const FAQSection = () => {
                 
                 {/* Animated Accordion Body */}
                 <div 
-                  className={`grid transition-[grid-template-rows,opacity] duration-300 ease-in-out w-full lg:grid-rows-[1fr] lg:opacity-100 ${
+                  className={`grid transition-[grid-template-rows,opacity] duration-300 ease-in-out w-full ${
                     isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
                   }`}
                 >
