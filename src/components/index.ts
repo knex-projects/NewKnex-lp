@@ -3,3 +3,4 @@ export * from "./section/portfoliosection";
 export * from "./section/team/teamsection";
 export * from "./section/aboutussection"
 export * from "./section/faqsection";
+export * from "./section/movementssection";
