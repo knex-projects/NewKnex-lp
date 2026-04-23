@@ -76,7 +76,7 @@ export const OurHistorySection = () => {
             Nossa história
           </h2>
 
-          <div className="flex flex-col gap-6 font-montserrat lg:text-[24px] text-[16px] font-light leading-relaxed text-white">
+          <div className="flex flex-col gap-6 font-montserrat lg:text-[24px] text-[16px] font-light leading-relaxed text-W3">
             <p>
               A Knex <strong className="font-semibold">nasceu</strong> em{" "}
               <strong className="font-semibold">2013</strong>, com o propósito de{" "}
