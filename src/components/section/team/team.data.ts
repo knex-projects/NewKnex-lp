@@ -8,7 +8,7 @@ import {
   teamAlysonPhoto,
   teamAlessandroPhoto,
   teamAnaelyPhoto,
-  teamArturPhoto,
+  teamArthurPhoto,
   teamBeatrizPhoto,
   teamCarlosEduardoPhoto,
   teamCarlosHenriquePhoto,
@@ -65,7 +65,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: "arthur-nicolas",
     name: "Arthur Nicolas",
     role: "Diretor de Projetos",
-    image: teamArturPhoto,
+    image: teamArthurPhoto,
   },
   {
     id: "roseane-nunes",
