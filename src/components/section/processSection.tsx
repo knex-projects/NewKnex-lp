@@ -129,7 +129,7 @@ export const ProcessSection = () => {
               <h1
                 className={[
                   "relative z-10 flex shrink-0 items-center justify-center rounded-full bg-P1 text-P5 font-bold font-quantico",
-                  "w-10 h-10 text-xl lg:ring-12 ring-4 ring-P1 sm:w-12 sm:h-12 sm:text-2xl lg:w-[48px] lg:h-[48px] lg:text-[48px]",
+                  "w-10 h-10 text-xl lg:ring-12 ring-4 ring-P1 sm:w-12 sm:h-12 sm:text-2xl lg:w-[48px] lg:h-[48px] lg:text-[48px] xl:w-[96px] xl:h-[96px] xl:text-[96px]",
                   "motion-reduce:transform-none motion-reduce:transition-none",
                   "transition-all duration-700 ease-out will-change-transform",
                   inView
@@ -157,8 +157,8 @@ export const ProcessSection = () => {
                 h-fit
 
                 lg:w-[300px] lg:max-w-[300px] lg:h-[400px]
-                xl:w-[400px] xl:max-w-[400px] xl:h-[400px]
-                2xl:w-[464px] 2xl:max-w-[464px] 2xl:h-[478px]
+                xl:w-[400px] xl:max-w-[400px] 
+                2xl:w-[464px] 2xl:max-w-[464px] xl:h-[478px]
                 motion-reduce:transform-none motion-reduce:transition-none
                 will-change-transform
                 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
@@ -178,11 +178,12 @@ export const ProcessSection = () => {
                   {step.icon}
                       </span>
 
-                <p className="font-montserrat font-light text-white text-start
+                <p className="font-montserrat font-light text-w3 text-start
                   text-[12px]
                   leading-relaxed
-                  lg:text-[0.82rem] lg:leading-snug lg:text-center
-                  xl:text-[1rem] 2xl:leading-relaxed">
+                   lg:leading-snug lg:text-center
+                  lg:text-[16px]
+                  xl:text-[20px] 2xl:leading-relaxed">
                   {step.description}
                 </p>
                     </div>
