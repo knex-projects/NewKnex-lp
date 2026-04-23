@@ -140,7 +140,7 @@ export const OurHistorySection = () => {
                 <div className="flex w-7 shrink-0 justify-center pt-1 lg:w-4 sm:pt-1.5">
                   <span
                     className={[
-                      "shrink-0 rounded-full bg-G4 size-6 sm:size-10",
+                      "shrink-0 rounded-full bg-G4 size-12 sm:size-15",
                       "motion-reduce:transform-none motion-reduce:transition-none",
                       "transition-all duration-700 ease-out will-change-transform",
                       timelineInView
@@ -157,7 +157,7 @@ export const OurHistorySection = () => {
                 </div>
                 <div
                   className={[
-                    "min-w-0 flex-1 pb-1",
+                    "min-w-0 flex-1 pb-1 lg:ml-10 ml-2",
                     "motion-reduce:transform-none motion-reduce:transition-none",
                     "transition-all duration-700 ease-out will-change-transform",
                     timelineInView
@@ -178,7 +178,7 @@ export const OurHistorySection = () => {
                   <h3 className="mt-2 font-quantico sm:text-[32px] font-bold text-G4 text-[24px]">
                     {item.title}
                   </h3>
-                  <p className="mt-2 max-w-prose font-montserrat sm:text-[24px] font-light leading-relaxed text-W5 text-[16px] md:leading-relaxed">
+                  <p className="mt-2 max-w-prose font-montserrat sm:text-[24px] font-light leading-relaxed text-W3 text-[16px] md:leading-relaxed">
                     {item.description}
                   </p>
                 </div>
