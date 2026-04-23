@@ -29,7 +29,7 @@ export const ServicesSection = () => {
     ]
     
     return (
-        <section id="services" className="flex flex-col gap-10 p-6 pb-24 px-0 animate-[portfolioReveal_820ms_cubic-bezier(0.22,1,0.36,1)_both] xl:px-60 lg:px-10 md:p-6">
+        <section id="services" className="flex flex-col gap-10 p-6 pb-24 px-0 animate-[portfolioReveal_820ms_cubic-bezier(0.22,1,0.36,1)_both] xl:px-60 lg:px-10 md:p-6 md:pt-30 md:pb-60">
             <h2 className="mx-6 font-[Quantico] text-[32px] font-bold sm:text-[40px] md:mx-0 lg:text-[48px]">
                 Alguns dos nossos principais
                 <span className="text-G5"> serviços</span>
@@ -46,12 +46,12 @@ export const ServicesSection = () => {
                     { servicesCards.map(({ icon: Icon, title, text }, index) => (
                         <CarouselItem
                             key={ index }
-                            className="basis-auto w-90 pt-14 pr-9.25 pb-15.75 pl-14 bg-Footer border border-P3 rounded-lg md:w-116 md:pt-19.25 md:pr-5.75 md:pb-23.25"
+                            className="group basis-auto w-90 pt-14 pr-9.25 pb-15.75 pl-14 bg-Footer border border-P3 rounded-lg transition-all ease-in-out duration-300 hover:border-G2 hover:shadow-lg hover:shadow-[#00FF734D] md:w-116 md:pt-19.25 md:pr-5.75 md:pb-23.25"
                         >
                             <div className="flex flex-col gap-8 h-full">
-                                <div className="flex gap-4.25">
-                                    <Icon className="w-16 h-16 text-P4 md:w-18 md:h-18" />
-                                    <h3 className="font-[Montserrat] text-xl font-bold text-W5 md:text-[28px]">{ title }</h3>
+                                <div className="flex items-center gap-4.25">
+                                    <Icon className="w-16 h-16 text-P4 transition-all ease-in-out duration-300 group-hover:text-G4 md:w-18 md:h-18" />
+                                    <h3 className="w-46 font-[Montserrat] text-xl font-bold text-W5 md:max-w-73 md:text-[28px]">{ title }</h3>
                                 </div>
                                 <p className="font-[Montserrat] text-lg text-W3 md:text-2xl">{ text }</p>
                             </div>
