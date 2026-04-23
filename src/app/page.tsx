@@ -1,10 +1,12 @@
-import { ProcessSection } from "../components";
-
+import { HeroSection, PortfolioSection, TeamSection, ProcessSection } from "../components";
 
 export default function Home() {
   return (
-    <section className="">
+    <main className="bg-BackGround">
+      <HeroSection />
       <ProcessSection />
-    </section>
+      <PortfolioSection />
+      <TeamSection />
+    </main>
   );
 }

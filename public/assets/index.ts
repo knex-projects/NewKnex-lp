@@ -1,0 +1,40 @@
+export const knexIcon = "/assets/icons/knex.svg";
+export const linkedinIcon = "/assets/icons/linkedin.svg";
+export const instagramIcon = "/assets/icons/instagram.svg";
+
+export const portfolioViisercompLogo = "/assets/logos/viisercomp.png";
+export const portfolioEventFlowLogo = "/assets/logos/eventflow.png";
+export const portfolioGrDesignLogo = "/assets/logos/grdesign.png";
+export const portfolioIrisComunicaLogo = "/assets/logos/iriscomunica.png";
+
+export const teamGeraldezPhoto = "/assets/team/geraldez.JPG";
+export const teamJennyferPhoto = "/assets/team/jennyfer.JPG";
+export const teamRaimundoPhoto = "/assets/team/raimundo.png";
+export const teamCarlosHenriquePhoto = "/assets/team/carloshenrique.JPG";
+export const teamArturPhoto = "/assets/team/artur.png";
+export const teamRoseanePhoto = "/assets/team/roseane.JPG";
+export const teamCarlosEduardoPhoto = "/assets/team/carloseduardo.png";
+export const teamAlessandroPhoto = "/assets/team/alessandro.png";
+export const teamHerculesPhoto = "/assets/team/hercules.png";
+export const teamFranciscoPhoto = "/assets/team/francisco.JPG";
+export const teamHenriquePhoto = "/assets/team/henrique.png";
+export const teamPabloPhoto = "/assets/team/pablo.png";
+export const teamNicolasPhoto = "/assets/team/nicolas.png";
+export const teamMarcosPhoto = "/assets/team/marcos.png";
+export const teamAlysonPhoto = "/assets/team/alyson.png";
+export const teamGianPhoto = "/assets/team/gian.JPG";
+export const teamIsaquePhoto = "/assets/team/isaque.png";
+export const teamThulioPhoto = "/assets/team/thulio.JPG";
+export const teamMonickPhoto = "/assets/team/monick.JPG";
+export const teamJosePhoto = "/assets/team/jose.JPG";
+export const teamAnaelyPhoto = "/assets/team/anaely.png";
+export const teamViniciusPhoto = "/assets/team/vinicius.png";
+export const teamNathiellyPhoto = "/assets/team/nathielly.JPG";
+export const teamDaianePhoto = "/assets/team/daiane.png";
+export const teamIsaacPhoto = "/assets/team/isaac.JPG";
+export const teamVitoriaPhoto = "/assets/team/vitoria.png";
+export const teamBeatrizPhoto = "/assets/team/beatriz.JPG";
+export const teamClarissaPhoto = "/assets/team/clarissa.JPG";
+export const teamLaisPhoto = "/assets/team/lais.JPG";
+
+export const teamKnex = "/assets/fotos/time-knex.svg"
