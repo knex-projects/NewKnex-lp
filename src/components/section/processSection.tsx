@@ -38,7 +38,7 @@ export const ProcessSection = () => {
     <section className="bg-BackGround flex flex-col items-center justify-center py-16 lg:min-h-[1006px] lg:py-0">
       <div className="container mx-auto flex flex-col items-center justify-center gap-10 px-4 lg:gap-20">
         
-        <h2 className="text-2xl sm:text-3xl text-start font-bold lg:text-center font-quantico text-white">
+        <h2 className="text-[32px] sm:text-[56px] text-start font-bold lg:text-center font-quantico text-white">
           Entenda nosso <span className="text-G4">processo</span>
         </h2>
 
@@ -62,54 +62,56 @@ export const ProcessSection = () => {
               className="relative flex flex-row lg:flex-col items-center justify-center gap-4 w-full max-w-[500px]"
             >
               <div
-                className={`pointer-events-none absolute z-0 w-1 bg-P1 lg:hidden left-[20px] sm:left-[24px] md:left-13 ${lineEdges}`}
+                className={`pointer-events-none absolute z-0 w-1 bg-P1 lg:hidden left-5 sm:left-6 md:left-6 ${lineEdges}`}
                 aria-hidden
               />
               <h1 className="relative z-10 flex shrink-0 items-center justify-center rounded-full bg-P1 text-P5 font-bold font-quantico
                 w-10 h-10 text-xl
+                lg:ring-12 ring-4 ring-P1
                 sm:w-12 sm:h-12 sm:text-2xl
-                lg:w-[56px] lg:h-[56px] lg:text-4xl">
+                lg:w-[48px] lg:h-[48px] lg:text-[48px]">
                 {step.id}
               </h1>
 
-              <h2 className="mb-6 text-2xl font-bold text-white font-quantico 
-              sm:mb-10 sm:text-[2rem] 
+              <h2 className="mb-6 text-[32px] font-bold text-white font-quantico 
+              sm:mb-10  2xl:text-[48px] 
               lg:block hidden">
                 {step.title}
               </h2>
 
-              <div className="relative z-10 group w-full flex flex-col items-center justify-start
+              <div className="relative z-10 group flex flex-col items-center justify-start
                 gap-4 sm:gap-5
-                rounded-xl border-2 border-P3 bg-Footer
+                rounded-xl border-2 border-P3 bg-BackGround lg:bg-Footer
                 p-4 sm:p-6
                 transition-all duration-300 hover:border-G3
                 
-                md:h-[300px] md:w-[380px] md:max-w-[380px]
-                lg:h-[360px] lg:w-[300px] lg:max-w-[300px]
-                xl:h-[460px] xl:w-[400px] xl:max-w-[400px]
-                min-[1440px]:h-[450px] min-[1440px]:w-[430px]
-                2xl:h-[478px] 2xl:w-[464px]">
+                h-fit
 
-                <div className="flex flex-row lg:flex-col items-center justify-start w-full gap-3 lg:justify-center">
-                  
-                  <h2 className="font-quantico font-normal text-white
-                    text-[1.5rem] sm:text-lg
-                    md:text-[1.5rem] 
-                    lg:text-[1.55rem] lg:font-bold
+                lg:w-[300px] lg:max-w-[300px] lg:h-[400px]
+                xl:w-[400px] xl:max-w-[400px] xl:h-[400px]
+                2xl:w-[464px] 2xl:max-w-[464px] 2xl:h-[478px]">
+
+                <div className="flex flex-col items-center justify-start w-full gap-2 lg:gap-6 lg:justify-center">
+                  <span className="flex w-full flex-row items-center justify-start gap-2 lg:gap-6 lg:flex-col lg:justify-center">
+
+                  <h2 className="font-quantico text-white
+                    md:text-[20px] 
+                    lg:text-[1.50rem] lg:font-bold
                     xl:text-[1.75rem] xl:font-bold
-                    2xl:text-[2rem] 2xl:font-bold">
+                    2xl:text-[2rem] font-bold">
                     {step.cardTitle}
                   </h2>
                   {step.icon}
-                </div>
+                      </span>
 
                 <p className="font-montserrat font-light text-white text-start
-                  text-[0.82rem] sm:text-base
+                  text-[12px]
                   leading-relaxed
                   lg:text-[0.82rem] lg:leading-snug lg:text-center
                   xl:text-[1rem] 2xl:leading-relaxed">
                   {step.description}
                 </p>
+                    </div>
               </div>
             </div>
           ); })}
