@@ -42,30 +42,36 @@ export const FAQSection = () => {
     },
   ];
 
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndices, setOpenIndices] = useState<number[]>([0]);
 
   return (
-    <section className="flex-1 w-full bg-[var(--color-BackGround)] flex flex-col items-center pt-16 pb-[150px] px-6">
-      <div className="w-full max-w-[1440px] flex flex-col gap-[80px] items-center lg:items-start">
+    <section className="flex-1 w-full bg-[var(--color-BackGround)] flex flex-col items-center pt-16 pb-[150px] px-6 lg:px-10 xl:px-60">
+      <div className="w-full flex flex-col gap-[80px] items-center lg:items-start">
         <h1 className="font-quantico font-bold text-[32px] lg:text-[48px] text-[var(--color-W6)] text-center lg:text-left w-full">
           Perguntas Frequentes
         </h1>
 
-        <div className="flex flex-col items-center lg:items-start w-full lg:max-w-[1440px] lg:max-h-[1449px]">
+        <div className="flex flex-col items-center lg:items-start w-full">
           {faqs.map((faq, index) => {
             const isAlternate = index % 2 !== 0;
-            const isOpen = openIndex === index;
+            const isOpen = openIndices.includes(index);
             
             return (
               <div
                 key={index}
-                className={`w-[360px] max-w-full min-[430px]:w-full lg:max-w-[1440px] flex flex-col lg:gap-[8px] justify-center rounded-[8px] ${
+                className={`w-full flex flex-col lg:gap-[8px] justify-center rounded-[8px] ${
                   isAlternate ? "bg-[var(--color-BackGround)]" : "bg-[var(--color-P1)]"
                 }`}
               >
                 <div 
                   className="h-[96px] lg:h-[118px] px-[24px] flex justify-between items-center w-full cursor-pointer"
-                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  onClick={() => {
+                    if (isOpen) {
+                      setOpenIndices(openIndices.filter((i) => i !== index));
+                    } else {
+                      setOpenIndices([...openIndices, index]);
+                    }
+                  }}
                 >
                   <h3 className="font-montserrat font-semibold text-[18px] lg:text-[24px] text-[var(--color-P5)]">
                     {faq.question}
