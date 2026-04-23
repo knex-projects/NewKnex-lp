@@ -86,7 +86,7 @@ export const PortfolioSection = () => {
         <header className="animate-[portfolioReveal_820ms_cubic-bezier(0.22,1,0.36,1)_both]">
           <h2
             id="portfolio-heading"
-            className="whitespace-nowrap text-center font-quantico text-[32px] font-bold leading-tight text-W6 sm:text-left sm:text-[40px] lg:text-[48px] xl:pl-32"
+            className="whitespace-nowrap text-center font-quantico text-[clamp(26px,7.5vw,32px)] font-bold leading-tight text-W6 sm:text-left sm:text-[40px] lg:text-[48px] xl:pl-32"
           >
             Confira nosso <span className="text-G5">portfólio</span>
           </h2>
