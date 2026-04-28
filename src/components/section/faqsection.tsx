@@ -87,7 +87,6 @@ export const FAQSection = () => {
                       className={`absolute transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-50'}`}
                     />
 
-                    {/* Closed SVG */}
                     <Image 
                       src={faqMobileClosedIcon}
                       alt="Abrir"
@@ -97,7 +96,6 @@ export const FAQSection = () => {
                   </div>
                 </div>
                 
-                {/* Animated Accordion Body */}
                 <div 
                   className={`grid transition-[grid-template-rows,opacity] duration-300 ease-in-out w-full ${
                     isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
