@@ -7,8 +7,8 @@ export default function Sobre() {
     return (
         <main className="bg-BackGround">
             <AboutUsSection />
-            <EventSection />
-            <OurHistorySection />
+             <OurHistorySection />
+             <EventSection />
             <MovementsSection />
         </main>
     )
