@@ -36,7 +36,7 @@ export const TeamSection = () => {
         <header className="animate-[portfolioReveal_820ms_cubic-bezier(0.22,1,0.36,1)_both]">
           <h2
             id="team-heading"
-            className="whitespace-nowrap text-center font-quantico text-[32px] font-bold leading-tight text-W6 sm:text-[40px] lg:text-[48px]"
+            className="whitespace-nowrap text-center font-quantico text-[clamp(26px,7.5vw,32px)] font-bold leading-tight text-W6 sm:text-[40px] lg:text-[48px]"
           >
             Conheça a nossa <span className="text-G5">equipe</span>
           </h2>
