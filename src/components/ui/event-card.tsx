@@ -1,4 +1,6 @@
+'use client';
 import Image from "next/image";
+import { useState } from "react";
 
 export type EventItem = {
   id: string;
@@ -10,9 +12,18 @@ export type EventItem = {
 };
 
 export const EventHoverCard = ({ item }: { readonly item: EventItem }) => {
+  const [isActive, setIsActive] = useState(false);
+
+  const toggleActive = () => {
+    setIsActive(!isActive);
+  };
+
   return (
-    <div className="group relative mx-auto h-[192px] w-full overflow-hidden rounded-sm shadow-sm sm:h-[282px] lg:w-[464px]">
-      <div className="absolute inset-0 z-0 opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100">
+    <div
+    onClick={toggleActive}
+    onMouseLeave={() => {setIsActive(false)}}
+    className="group relative mx-auto h-[192px] w-full overflow-hidden rounded-sm shadow-sm sm:h-[282px] lg:w-[464px]">
+      <div className={`absolute inset-0 z-0 transition-opacity duration-300 ease-out  ${isActive ? 'opacity-100' : 'lg:group-hover:opacity-100 opacity-0'}`}>
         <Image
           src={item.img_bg}
           alt=""
@@ -34,7 +45,7 @@ export const EventHoverCard = ({ item }: { readonly item: EventItem }) => {
         </div>
       </div>
 
-      <div className="relative z-10 flex h-full w-full items-center justify-center bg-P3 px-5 transition-opacity duration-300 ease-out group-hover:opacity-0 sm:px-8">
+      <div className={`relative z-10 flex h-full w-full items-center justify-center bg-P3 px-5 transition-opacity duration-300 ease-out  sm:px-8 ${isActive ? 'opacity-0':'lg:group-hover:opacity-0 opacity-100'} ` }>
         <Image
           src={item.img_logo}
           alt={item.title}
