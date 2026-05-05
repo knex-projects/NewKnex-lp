@@ -1,7 +1,8 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { z } from "zod";
+import emailjs from "@emailjs/browser";
 import { instagramIcon, linkedinIcon } from "@/public/assets";
 import { IconButton } from "@/src/components/ui";
 
@@ -30,11 +31,17 @@ const fieldLabelClass =
 export const ContactSection = () => {
   const [sent, setSent] = useState(false);
   const [errors, setErrors] = useState<Partial<Record<ContactFormField, string>>>({});
+  const [loading, setLoading] = useState(false);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  useEffect(() => {
+    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "");
+  }, []);
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const form = event.currentTarget;
 
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(form);
     const values = {
       nome: String(formData.get("nome") ?? ""),
       email: String(formData.get("email") ?? ""),
@@ -63,8 +70,33 @@ export const ContactSection = () => {
     }
 
     setErrors({});
-    setSent(true);
-    event.currentTarget.reset();
+    setLoading(true);
+
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
+        {
+          to_email: "knex@contato.com",
+          from_email: values.email,
+          from_name: values.nome,
+          telefone: values.telefone,
+          empresa: values.empresa,
+          cidade_uf: values.cidadeUf,
+          assunto: values.assunto,
+          mensagem: values.mensagem,
+        }
+      );
+      
+      setSent(true);
+      form.reset();
+    } catch (error) {
+      console.error("Erro ao enviar email:", error);
+      setErrors({ nome: "Erro ao enviar o formulário. Tente novamente." });
+      setSent(false);
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -171,14 +203,23 @@ export const ContactSection = () => {
           <div className="flex flex-col items-end justify-end gap-4 xl:col-span-2 xl:min-h-[122px]">
             {sent ? (
               <p className="px-4 font-montserrat text-[20px] font-bold text-Pp4 xl:text-[24px]">
-                Formulário validado com sucesso.
+                Formulário enviado com sucesso.
               </p>
             ) : null}
             <button
               type="submit"
-              className="h-[61px] w-[155px] px-6 cursor-pointer rounded-sm bg-G4 py-4 font-quantico text-[20px] font-bold text-Gg0 hover:bg-white ease-in-out duration-300 sm:h-[66px] sm:w-[199px] sm:text-[24px] sm:px-16"
+              disabled={loading}
+              className="h-[61px] w-[155px] flex items-center justify-center px-6 cursor-pointer rounded-sm bg-G4 py-4 font-quantico text-[20px] font-bold text-Gg0 hover:bg-white ease-in-out duration-300 disabled:opacity-50 disabled:cursor-not-allowed sm:h-[66px] sm:w-[199px] sm:text-[24px] sm:px-16"
             >
-              Enviar
+              {loading ? (
+                <span className="flex gap-0.5">
+                  <span className="w-1 h-1 bg-Gg0 rounded-full animate-bounce"></span>
+                  <span className="w-1 h-1 bg-Gg0 rounded-full animate-bounce" style={{ animationDelay: "0.1s" }}></span>
+                  <span className="w-1 h-1 bg-Gg0 rounded-full animate-bounce" style={{ animationDelay: "0.2s" }}></span>
+                </span>
+              ) : (
+                "Enviar"
+              )}
             </button>
           </div>
         </form>
