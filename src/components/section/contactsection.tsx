@@ -22,25 +22,17 @@ type ContactFormData = z.infer<typeof contactFormSchema>;
 type ContactFormField = keyof ContactFormData;
 
 const inputBaseClass =
-  "h-[77px] w-full rounded-lg border border-Pp3 bg-P1 px-4 py-6 font-montserrat text-[20px] text-W6 outline-none placeholder:text-W2 transition-colors focus:border-Pp3 xl:text-[24px]";
+  "h-[60px] xl:h-[77px] w-full rounded-lg border border-Pp3 bg-P1 px-4 py-6 font-montserrat text-[20px] text-W6 outline-none placeholder:text-W2 transition-colors focus:border-Pp3 xl:text-[24px]";
 
 const fieldLabelClass =
-  "font-montserrat text-[20px] font-bold leading-none text-W6 xl:text-[24px]";
+  "h-[20px] xl:h-[32px] font-montserrat text-[18px] xl:text-[26px] font-bold leading-none text-W5";
 
 export const ContactSection = () => {
   const [sent, setSent] = useState(false);
+  const [errors, setErrors] = useState<Partial<Record<ContactFormField, string>>>({});
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-
-    const form = event.currentTarget;
-    const controls = form.elements as typeof form.elements & {
-      [key in ContactFormField]: HTMLInputElement | HTMLTextAreaElement;
-    };
-
-    Object.keys(contactFormSchema.shape).forEach((fieldName) => {
-      controls[fieldName as ContactFormField].setCustomValidity("");
-    });
 
     const formData = new FormData(event.currentTarget);
     const values = {
@@ -56,19 +48,21 @@ export const ContactSection = () => {
     const result = contactFormSchema.safeParse(values);
 
     if (!result.success) {
+      const newErrors: Partial<Record<ContactFormField, string>> = {};
+      
       result.error.issues.forEach((issue) => {
         const fieldName = issue.path[0] as ContactFormField | undefined;
-
-        if (fieldName && !controls[fieldName].validationMessage) {
-          controls[fieldName].setCustomValidity(issue.message);
+        if (fieldName) {
+          newErrors[fieldName] = issue.message;
         }
       });
 
+      setErrors(newErrors);
       setSent(false);
-      form.reportValidity();
       return;
     }
 
+    setErrors({});
     setSent(true);
     event.currentTarget.reset();
   }
@@ -77,30 +71,30 @@ export const ContactSection = () => {
     <section className="w-full bg-BackGround px-5 pt-16 pb-40 text-W6 sm:px-6 lg:px-10 xl:px-60 xl:pt-28 xl:pb-40">
       <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-12 xl:flex-row xl:items-start xl:justify-between xl:gap-21">
         <div className="contents xl:flex xl:h-auto xl:w-full xl:max-w-[404px] xl:flex-col">
-          <h1 className="order-1 w-full font-quantico text-[40px] font-bold leading-[48px] opacity-100 xl:h-[112px] xl:w-[766px] xl:text-[48px] xl:leading-[56px]">
+          <h1 className="order-1 w-full font-quantico text-[32px] font-bold leading-[48px] opacity-100 text-W0 xl:h-[112px] xl:w-[766px] xl:text-[48px] xl:leading-[56px]">
             Solicite um orçamento para seu projeto digital criar forma.
           </h1>
           <div className="order-2 hidden h-[151px] xl:block" />
 
-          <div className="order-3 flex h-auto w-full max-w-[404px] flex-col gap-8 font-montserrat text-[20px] text-W2 xl:h-[516px] xl:w-[404px] xl:text-[24px]">
+          <div className="order-3 flex h-auto w-full max-w-[404px] flex-col gap-8 font-montserrat text-[20px] text-W5 xl:h-[516px] xl:w-[404px] xl:text-[24px]">
             <p className="font-bold leading-tight text-W5">
               Sinta-se a vontade para entrar em contato com a nossa equipe,
               estamos a disposição para trazer realidade as suas ideias.
             </p>
 
             <div className="flex flex-col gap-4">
-              <strong className="text-W6">Nosso E-mail</strong>
-              <span>knex@contato.com</span>
+              <strong className="text-W5">Nosso E-mail</strong>
+              <span className="text-W2">knex@contato.com</span>
             </div>
 
             <div className="flex flex-col gap-4">
-              <strong className="text-W6">Nosso Telefone</strong>
-              <span>(00) 00000-0000</span>
+              <strong className="text-W5">Nosso Telefone</strong>
+              <span className="text-W2">(00) 00000-0000</span>
             </div>
 
             <div className="flex flex-col gap-4">
-              <strong className="text-W6">Nossa Localização</strong>
-              <span>Rua ali Perto, 12, Centro - Patos/PB</span>
+              <strong className="text-W5">Nossa Localização</strong>
+              <span className="text-W2">Rua ali Perto, 12, Centro - Patos/PB</span>
             </div>
 
           </div>
@@ -113,41 +107,42 @@ export const ContactSection = () => {
 
         <form
           onSubmit={handleSubmit}
-          className="order-2 grid h-auto min-h-[997px] w-full max-w-[952px] grid-cols-1 content-start gap-x-11 gap-y-8 bg-BackGround xl:mt-[263px] xl:h-[997px] xl:w-[952px] xl:grid-cols-2"
+          className="order-2 grid h-auto w-full max-w-[952px] grid-cols-1 content-start gap-x-11 gap-y-8 bg-BackGround xl:mt-[263px] xl:min-h-[997px] xl:w-[952px] xl:grid-cols-2"
         >
           <FormField
             className="xl:col-span-2"
             label="Nome"
             name="nome"
             placeholder="Seu nome"
+            error={errors.nome}
           />
 
           <FormField
-            inputClassName="xl:w-[464px]"
             label="E-mail"
             name="email"
             placeholder="email@contato.com"
+            error={errors.email}
           />
 
           <FormField
-            inputClassName="xl:w-[464px]"
             label="Telefone"
             name="telefone"
             placeholder="(00) 00000-0000"
+            error={errors.telefone}
           />
 
           <FormField
-            inputClassName="xl:w-[464px]"
             label="Empresa"
             name="empresa"
             placeholder="Sua empresa"
+            error={errors.empresa}
           />
 
           <FormField
-            inputClassName="xl:w-[464px]"
             label="Cidade/UF"
             name="cidadeUf"
             placeholder="Cidade - UF"
+            error={errors.cidadeUf}
           />
 
           <FormField
@@ -155,6 +150,7 @@ export const ContactSection = () => {
             label="Assunto"
             name="assunto"
             placeholder="Título da necessidade"
+            error={errors.assunto}
           />
 
           <label className="flex flex-col gap-6 xl:col-span-2">
@@ -162,9 +158,14 @@ export const ContactSection = () => {
             <textarea
               name="mensagem"
               placeholder="Descrição da sua necessidade"
-              className="h-[238px] w-full resize-none rounded-lg border border-Pp3 bg-P1 px-4 py-6 font-montserrat text-[20px] text-W6 outline-none placeholder:text-W2 transition-colors focus:border-Pp3 xl:text-[24px]"
+              className="h-[180px] xl:h-[238px] w-full resize-none rounded-lg border border-Pp3 bg-P1 px-4 py-6 font-montserrat text-[20px] text-W6 outline-none placeholder:text-W2 transition-colors focus:border-Pp3 xl:text-[24px]"
               onInput={(event) => event.currentTarget.setCustomValidity("")}
             />
+            {errors.mensagem && (
+              <span className="font-montserrat text-[16px] font-semibold leading-none text-red-500 xl:text-[18px]">
+                {errors.mensagem}
+              </span>
+            )}
           </label>
 
           <div className="flex flex-col items-end justify-end gap-4 xl:col-span-2 xl:min-h-[122px]">
@@ -175,7 +176,7 @@ export const ContactSection = () => {
             ) : null}
             <button
               type="submit"
-              className="h-[66px] w-full cursor-pointer rounded-sm bg-G4 px-16 py-4 font-quantico text-[24px] font-bold text-Gg0 hover:bg-white ease-in-out duration-300 sm:w-[199px]"
+              className="h-[61px] w-[155px] px-6 cursor-pointer rounded-sm bg-G4 py-4 font-quantico text-[20px] font-bold text-Gg0 hover:bg-white ease-in-out duration-300 sm:h-[66px] sm:w-[199px] sm:text-[24px] sm:px-16"
             >
               Enviar
             </button>
@@ -192,6 +193,7 @@ type FormFieldProps = Readonly<{
   name: keyof Omit<ContactFormData, "mensagem">;
   placeholder: string;
   inputClassName?: string;
+  error?: string;
 }>;
 
 const FormField = ({
@@ -200,16 +202,24 @@ const FormField = ({
   name,
   placeholder,
   inputClassName = "",
+  error,
 }: FormFieldProps) => {
   return (
     <label className={`flex flex-col gap-6 ${className}`}>
       <span className={fieldLabelClass}>{label}</span>
-      <input
-        name={name}
-        placeholder={placeholder}
-        className={`${inputBaseClass} ${inputClassName}`}
-        onInput={(event) => event.currentTarget.setCustomValidity("")}
-      />
+      <div className="flex flex-col gap-2">
+        <input
+          name={name}
+          placeholder={placeholder}
+          className={`${inputBaseClass} ${inputClassName}`}
+          onInput={(event) => event.currentTarget.setCustomValidity("")}
+        />
+        {error && (
+          <span className="font-montserrat text-[16px] font-semibold leading-none text-red-500 xl:text-[18px]">
+            {error}
+          </span>
+        )}
+      </div>
     </label>
   );
 };
