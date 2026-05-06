@@ -36,7 +36,7 @@ src/
     └── sections/         # Componentes de seções
 public/
 └── assets/
-    ├── fotos/            # Imagens e fotos
+    ├── photos/           # Imagens e fotos
     ├── icons/            # Ícones
     └── logos/            # Logos
 ```

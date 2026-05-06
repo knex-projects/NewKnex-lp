@@ -61,8 +61,8 @@ export const OurHistorySection = () => {
   }, [textInView]);
 
   return (
-    <section className="bg-BackGround py-16 lg:py-20">
-      <div className="container mx-auto flex lg:flex-row flex-col items-start justify-between gap-10 px-6 w-full">
+    <section className="bg-BackGround px-6.5  lg:px-10 xl:px-60  py-16 lg:py-20">
+      <div className="container flex lg:flex-row flex-col items-start justify-between gap-30  w-full">
         <div
           ref={textRef}
           className={[
@@ -76,7 +76,7 @@ export const OurHistorySection = () => {
             Nossa história
           </h2>
 
-          <div className="flex flex-col gap-6 font-montserrat lg:text-[24px] text-[16px] font-light leading-relaxed text-W3">
+          <div className="flex flex-col gap-6 font-montserrat md:text-[24px] text-[16px] font-light leading-relaxed text-W3">
             <p>
               A Knex <strong className="font-semibold">nasceu</strong> em{" "}
               <strong className="font-semibold">2013</strong>, com o propósito de{" "}
@@ -157,7 +157,7 @@ export const OurHistorySection = () => {
                 </div>
                 <div
                   className={[
-                    "min-w-0 flex-1 pb-1 lg:ml-10 ml-2",
+                    "min-w-0 flex-1 pb-1 lg:ml-20 ml-2",
                     "motion-reduce:transform-none motion-reduce:transition-none",
                     "transition-all duration-700 ease-out will-change-transform",
                     timelineInView
@@ -178,7 +178,7 @@ export const OurHistorySection = () => {
                   <h3 className="mt-2 font-quantico sm:text-[32px] font-bold text-G4 text-[24px]">
                     {item.title}
                   </h3>
-                  <p className="mt-2 max-w-prose font-montserrat sm:text-[24px] font-light leading-relaxed text-W3 text-[16px] md:leading-relaxed">
+                  <p className="mt-2 max-w-prose font-montserrat md:text-[24px] font-light leading-relaxed text-W3 text-[16px] md:leading-relaxed">
                     {item.description}
                   </p>
                 </div>
