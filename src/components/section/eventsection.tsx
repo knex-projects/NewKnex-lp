@@ -74,7 +74,7 @@ export const EventSection = () => {
   return (
     <section
       id="eventos"
-      className="bg-BackGround   py-16 px-6.5  lg:px-10 xl:px-32  sm:py-20 "
+      className="bg-BackGround   py-16 px-6.5  lg:px-10 xl:px-[5%]  sm:py-20 "
       aria-labelledby="eventos-heading"
     >
       <div className="mx-auto flex w-full max-w-[1700px] flex-col">

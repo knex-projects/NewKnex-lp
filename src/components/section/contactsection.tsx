@@ -100,7 +100,7 @@ export const ContactSection = () => {
   }
 
   return (
-    <section className="w-full bg-BackGround px-5 pt-16 pb-40 text-W6 sm:px-6 lg:px-10 xl:px-60 xl:pt-28 xl:pb-40">
+    <section className="w-full bg-BackGround px-5 pt-16 pb-40 text-W6 sm:px-6 lg:px-10 xl:px-[12.5%] xl:pt-28 xl:pb-40">
       <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-12 xl:flex-row xl:items-start xl:justify-between xl:gap-21">
         <div className="contents xl:flex xl:h-auto xl:w-full xl:max-w-[404px] xl:flex-col">
           <h1 className="order-1 w-full font-quantico text-[32px] font-bold leading-[48px] opacity-100 text-W0 xl:h-[112px] xl:w-[766px] xl:text-[48px] xl:leading-[56px]">

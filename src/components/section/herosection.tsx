@@ -50,7 +50,7 @@ const PRODUCTS = [
 export const HeroSection = () => {
   return (
     <section>
-      <div className="w-full flex items-center justify-between xl:px-60 py-30 px-10 flex-col lg:flex-row">
+      <div className="w-full flex items-center justify-between xl:px-[12.5%] py-30 px-10 flex-col lg:flex-row">
         <div className="flex flex-col items-start justify-center sm:gap-10 gap-2 lg:mb-0 mb-12">
           <span className="flex flex-col items-start justify-center gap-10 lg:mb-0 mb-12 lg:h-auto h-[100px]">
             <h1 className="max-w-xl font-quantico text-3xl font-bold leading-tight text-W6 sm:text-4xl lg:text-5xl min-w">
@@ -99,7 +99,7 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      <div className="flex w-full flex-row flex-wrap items-center justify-center gap-6 xl:px-30 pb-30 px-6">
+      <div className="flex w-full flex-row flex-wrap items-center justify-center gap-6 xl:px-[12.5%] pb-30 px-6">
         {STAT_CARDS.map(({ title, value, Icon }) => (
           <StatCard key={title} title={title} value={value} Icon={Icon} />
         ))}

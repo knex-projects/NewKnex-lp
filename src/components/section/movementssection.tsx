@@ -3,7 +3,7 @@ import { pbJuniorLogo, brasilJuniorLogo } from "@/public/assets";
 
 export const MovementsSection = () => {
   return (
-    <section className="flex flex-col justify-center items-center w-full p-6.5 lg:px-10 xl:px-60 md:py-22 bg-BackGround">
+    <section className="flex flex-col justify-center items-center w-full p-6.5 lg:px-10 xl:px-[12.5%] md:py-22 bg-BackGround">
       <div className="flex w-full flex-col gap-5 lg:gap-[120px]">
         <h2 className="font-quantico font-bold text-W0 text-[32px] md:text-[40px] lg:text-[48px] leading-tight max-w-[800px] text-left">
           Movimentos e Programas Júniores dos quais a Knex Participa

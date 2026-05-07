@@ -29,7 +29,7 @@ export const ServicesSection = () => {
     ]
     
     return (
-        <section id="services" className="flex flex-col gap-10 p-6 pb-24 px-0 animate-[portfolioReveal_820ms_cubic-bezier(0.22,1,0.36,1)_both] xl:px-60 lg:px-10 md:p-6 md:pt-30 md:pb-60">
+        <section id="services" className="flex flex-col gap-10 p-6 pb-24 px-0 animate-[portfolioReveal_820ms_cubic-bezier(0.22,1,0.36,1)_both] xl:px-[12.5%] lg:px-10 md:p-6 md:pt-30 md:pb-60">
             <h2 className="mx-6 font-[Quantico] text-[32px] font-bold sm:text-[40px] md:mx-0 lg:text-[48px]">
                 Alguns dos nossos principais
                 <span className="text-G5"> serviços</span>

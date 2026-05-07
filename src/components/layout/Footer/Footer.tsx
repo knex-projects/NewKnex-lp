@@ -6,7 +6,7 @@ import { IconButton } from "../../ui"
 
 export default function Footer() {
     return(
-        <footer className="p-6.5 pb-17 bg-Footer font-[Montserrat] text-W2 md:pt-30 lg:px-10 xl:px-60">
+        <footer className="p-6.5 pb-17 bg-Footer font-[Montserrat] text-W2 md:pt-30 lg:px-10 xl:px-[12.5%]">
             <div className="flex flex-col md:flex-row md:justify-between">
                 <Image
                     src={ logoKnex }

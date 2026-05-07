@@ -15,7 +15,7 @@ export default function Header() {
     }
 
     return (
-        <header className={ `z-100 w-full px-6 py-10 bg-BackGround lg:px-10 xl:px-60 ${ openMenu ? "fixed" : "static" }` }>
+        <header className={ `z-100 w-full px-6 py-10 bg-BackGround lg:px-10 xl:px-[12.5%] ${ openMenu ? "fixed" : "static" }` }>
             <nav className="flex items-center justify-between">
                 
             <Link href="/">

@@ -45,7 +45,7 @@ export const FAQSection = () => {
   const [openIndices, setOpenIndices] = useState<number[]>([0]);
 
   return (
-    <section className="flex-1 w-full bg-[var(--color-BackGround)] flex flex-col items-center pt-16 pb-[150px] px-6 lg:px-10 xl:px-60">
+    <section className="flex-1 w-full bg-[var(--color-BackGround)] flex flex-col items-center pt-16 pb-[150px] px-6 lg:px-10 xl:px-[12.5%]">
       <div className="w-full flex flex-col gap-[80px] items-center lg:items-start">
         <h1 className="font-quantico font-bold text-[32px] lg:text-[48px] text-[var(--color-W6)] text-center lg:text-left w-full">
           Perguntas Frequentes

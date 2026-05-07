@@ -79,7 +79,7 @@ export const PortfolioSection = () => {
   return (
     <section
       id="portfolio"
-      className="relative overflow-hidden px-6 pb-24 sm:px-10 sm:pb-28 lg:px-16 xl:px-30 lg:pb-36"
+      className="relative overflow-hidden px-6 pb-24 sm:px-10 sm:pb-28 lg:px-16 lg:pb-36 xl:px-[5%] "
       aria-labelledby="portfolio-heading"
     >
       <div className="mx-auto flex w-full max-w-[1700px] flex-col">

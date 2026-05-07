@@ -61,7 +61,7 @@ export const OurHistorySection = () => {
   }, [textInView]);
 
   return (
-    <section className="bg-BackGround px-6.5  lg:px-10 xl:px-60  py-16 lg:py-20">
+    <section className="bg-BackGround px-6.5  lg:px-10 xl:px-[12.5%]  py-16 lg:py-20">
       <div className="container flex lg:flex-row flex-col items-start justify-between gap-30  w-full">
         <div
           ref={textRef}
