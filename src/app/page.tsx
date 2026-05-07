@@ -1,4 +1,5 @@
-import { HeroSection, PortfolioSection, TeamSection, ProcessSection } from "../components";
+import {ProcessSection } from "../components";
+import { HeroSection, PortfolioSection, ServicesSection, TeamSection } from "@/src/components";
 
 export default function Home() {
   return (
@@ -6,6 +7,7 @@ export default function Home() {
       <HeroSection />
       <ProcessSection />
       <PortfolioSection />
+      <ServicesSection />
       <TeamSection />
     </main>
   );
