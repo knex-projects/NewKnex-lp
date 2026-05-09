@@ -44,6 +44,8 @@ export const PortfolioProjectCard = ({ project }: PortfolioProjectCardProps) => 
 
           <a
             href={project.href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-4 inline-flex h-[25px] w-[104px] items-center justify-center gap-1 rounded-[2px] bg-G2 font-montserrat text-[14px] font-bold leading-none text-p6 transition-colors duration-300"
           >
             <span>Visitar</span>
@@ -79,6 +81,7 @@ export const PortfolioProjectCard = ({ project }: PortfolioProjectCardProps) => 
 
           <a
             href={project.href}
+            target="_blank"
             className="pointer-events-auto mt-4 inline-flex h-10 w-[108px] items-center justify-center gap-1 rounded-[2px] bg-G2 font-montserrat text-[18px] font-bold leading-none text-p6 transition-colors duration-300 hover:bg-G5 sm:mt-6 sm:h-[44px] sm:w-[117px] sm:text-[20px]"
           >
             <span>Visitar</span>
