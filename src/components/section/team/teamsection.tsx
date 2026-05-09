@@ -45,7 +45,7 @@ export const TeamSection = () => {
         <div className="animate-[portfolioReveal_980ms_cubic-bezier(0.22,1,0.36,1)_both] relative left-1/2 mt-10 w-[min(1916px,100vw)] -translate-x-1/2 sm:mt-14 sm:w-[min(1916px,calc(100vw-32px))] lg:mt-[84px]">
           <Carousel
             setApi={setCarouselApi}
-            opts={{ align: "start", loop: true}}
+            opts={{ align: "start", loop: true }}
             className="h-full w-full"
           >
             <CarouselContent className="-ml-2 h-full sm:-ml-10">
@@ -62,7 +62,7 @@ export const TeamSection = () => {
                     key={itemKey}
                     className="h-full basis-auto pl-2 sm:pl-10"
                   >
-                    <article className="group w-[160px] sm:w-[312px]">
+                    <article className={`group w-[160px] sm:w-[312px] `}>
                       <div className="relative h-[166px] w-[160px] overflow-hidden bg-B1 sm:h-[382px] sm:w-[312px]">
                         <Image
                           src={imageSrc}
@@ -80,7 +80,7 @@ export const TeamSection = () => {
                               return next;
                             });
                           }}
-                          className="object-cover object-top sm:object-[center_35%] transition-transform duration-500 group-hover:scale-105"
+                          className="object-cover object-top  sm:object-center transition-transform duration-500 group-hover:scale-105"
                           sizes="(max-width: 639px) 160px, 312px"
                         />
                       </div>
