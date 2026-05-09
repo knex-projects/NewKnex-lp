@@ -55,15 +55,14 @@ export const FAQSection = () => {
           {faqs.map((faq, index) => {
             const isAlternate = index % 2 !== 0;
             const isOpen = openIndices.includes(index);
-            
+
             return (
               <div
                 key={index}
-                className={`w-full flex flex-col lg:gap-[8px] justify-center rounded-[8px] ${
-                  isAlternate ? "bg-[var(--color-BackGround)]" : "bg-[var(--color-P1)]"
-                }`}
+                className={`w-full flex flex-col lg:gap-[8px] justify-center rounded-[8px] ${isAlternate ? "bg-[var(--color-BackGround)]" : "bg-[var(--color-P1)]"
+                  }`}
               >
-                <div 
+                <div
                   className="h-[96px] lg:h-[118px] px-[24px] flex justify-between items-center w-full cursor-pointer"
                   onClick={() => {
                     if (isOpen) {
@@ -76,20 +75,18 @@ export const FAQSection = () => {
                   <h3 className="font-montserrat font-semibold text-[18px] lg:text-[24px] text-[var(--color-P5)]">
                     {faq.question}
                   </h3>
+
                   
-                  <div className="hidden lg:block relative">
-                    <Image src={faqMobileOpenIcon} alt="Abrir" width={34} height={46} />
-                  </div>
-                  
-                  <div className="relative w-[34px] h-[43px] flex items-center justify-center lg:hidden">
-                    <Image 
+
+                  <div className="relative w-[34px] h-[43px] flex items-center justify-center ">
+                    <Image
                       src={faqMobileOpenIcon}
                       alt="Fechar"
                       width={34} height={43}
                       className={`absolute transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-50'}`}
                     />
 
-                    <Image 
+                    <Image
                       src={faqMobileClosedIcon}
                       alt="Abrir"
                       width={34} height={38}
@@ -97,15 +94,14 @@ export const FAQSection = () => {
                     />
                   </div>
                 </div>
-                
-                <div 
-                  className={`grid transition-[grid-template-rows,opacity] duration-300 ease-in-out w-full ${
-                    isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
-                  }`}
+
+                <div
+                  className={`grid transition-[grid-template-rows,opacity] duration-300 ease-in-out w-full ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                    }`}
                 >
                   <div className="overflow-hidden">
                     <div className="flex items-start px-[24px] pb-[20px]">
-                      <p className="font-montserrat font-normal text-[18px] lg:text-[24px] text-[var(--color-W4)] leading-snug">
+                      <p className="font-montserrat font-normal text-[18px] lg:text-[20px] text-[var(--color-W4)] leading-snug">
                         {faq.answer}
                       </p>
                     </div>
