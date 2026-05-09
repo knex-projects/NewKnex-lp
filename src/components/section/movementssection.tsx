@@ -27,7 +27,7 @@ export const MovementsSection = () => {
               <h3 className="hidden lg:block font-quantico text-[48px] font-bold text-[var(--color-W6)]">
                 PB júnior
               </h3>
-              <p className="font-montserrat text-[16px] lg:text-[24px] font-normal text-[var(--color-W4)] leading-relaxed">
+              <p className="font-montserrat text-[16px] lg:text-[20px] font-normal text-[var(--color-W4)] leading-relaxed">
                 É a federação que reúne todas as empresas juniores da paraíba, conectando os EJs do sertão até o mar através conexões, eventos e formações, além de auxiliar toda a rede na construção e no gerenciamento de suas EJs em conjunto com o MEJ.
               </p>
             </div>
@@ -51,7 +51,7 @@ export const MovementsSection = () => {
               <h3 className="hidden lg:block font-quantico text-[48px] font-bold text-[var(--color-W6)]">
                 Movimento empresa júnior
               </h3>
-              <p className="font-montserrat text-[16px] lg:text-[24px] font-normal text-[var(--color-W4)] leading-relaxed">
+              <p className="font-montserrat text-[16px] lg:text-[20px] font-normal text-[var(--color-W4)] leading-relaxed">
                 O Movimento Empresa Júnior (MEJ) é a maior rede de jovens empreendedores do Brasil, formada por estudantes de graduação que criam e gerenciam suas próprias organizações dentro das universidades. Mais do que um projeto acadêmico, o MEJ é um ecossistema de aprendizado, inovação e impacto real.
               </p>
             </div>
