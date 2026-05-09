@@ -80,7 +80,7 @@ export const TeamSection = () => {
                               return next;
                             });
                           }}
-                          className="object-cover object-top  sm:object-center transition-transform duration-500 group-hover:scale-105"
+                          className="object-cover object-top  sm:object-top transition-transform duration-500 group-hover:scale-105"
                           sizes="(max-width: 639px) 160px, 312px"
                         />
                       </div>
