@@ -85,7 +85,7 @@ export const ProcessSection = () => {
 
           <div
             className={[
-              "pointer-events-none absolute top-[24px]  xl:top-[50px] hidden h-px border-b-6 border-solid border-P1 bg-P1",
+              "pointer-events-none absolute top-[24px]  2xl:top-[50px] hidden h-px border-b-6 border-solid border-P1 bg-P1",
               "lg:block lg:left-[170px] lg:right-[170px] xl:left-[200px] xl:right-[200px] 2xl:left-[242px] 2xl:right-[242px]",
               "z-0 origin-left",
               "motion-reduce:transform-none motion-reduce:transition-none",
@@ -129,7 +129,7 @@ export const ProcessSection = () => {
               <h1
                 className={[
                   "relative z-10 flex shrink-0 items-center justify-center rounded-full bg-P1 text-P5 font-bold font-quantico",
-                  "w-10 h-10 text-xl lg:ring-12 ring-4 ring-P1 sm:w-12 sm:h-12 sm:text-2xl lg:w-[48px] lg:h-[48px] md:text-3xl  xl:text-[48px] font-bold xl:w-[96px] xl:h-[96px] xl:text-[48px]",
+                  "w-10 h-10 text-xl lg:ring-12 ring-4 ring-P1 sm:w-12 sm:h-12 sm:text-2xl  lg:w-16 lg:h-16 md:text-3xl  font-bold 2xl:w-[96px] 2xl:h-[96px] 2xl:text-[48px]",
                   "motion-reduce:transform-none motion-reduce:transition-none",
                   "transition-all duration-700 ease-out will-change-transform",
                   inView
@@ -157,13 +157,11 @@ export const ProcessSection = () => {
                 max-sm:mr-[5%]
                 lg:max-w-[464px]   md:h-full 
                 [1912px]:w-[464px]
-                motion-reduce:transform-none motion-reduce:transition-none
-                will-change-transform
                 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
-                style={{ transitionDelay: inView ? delay : "0ms" }}
+               
               >
 
-                <div className="flex flex-col items-center justify-start w-full gap-2 lg:gap-6 lg:justify-center">
+                <div className="flex flex-col items-center justify-between w-full lg:justify-center">
                   <span className="flex w-full flex-row items-center justify-start gap-2 lg:gap-6 lg:flex-col lg:justify-center">
 
                   <h2 className="font-quantico text-W5
@@ -179,10 +177,10 @@ export const ProcessSection = () => {
                 <p className="font-montserrat font-light text-w4 text-start
                   text-[12px]
                   leading-relaxed
+                  sm:text-[16px]
                    lg:leading-snug lg:text-center
-                   md:text-[18px] md:font-normal
-                  lg:text-[20px]
-                  xl:text-[20px] 2xl:leading-relaxed
+                    lg:text-[18px] lg:font-normal
+                  2xl:leading-relaxed
                   2xl:pb-[6.5px]
                  ">
                   {step.description}
