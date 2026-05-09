@@ -23,7 +23,7 @@ type ContactFormData = z.infer<typeof contactFormSchema>;
 type ContactFormField = keyof ContactFormData;
 
 const inputBaseClass =
-  "h-[60px] xl:h-[77px] w-full rounded-lg border border-Pp3 bg-P1 px-4 py-6 font-montserrat text-[20px] text-W6 outline-none placeholder:text-W2 transition-colors focus:border-Pp3 xl:text-[24px]";
+  "h-[60px] xl:h-[77px] w-full rounded-lg border border-Pp3 bg-P1 px-4 py-6 font-montserrat text-[20px] text-W6 outline-none placeholder:text-W2 transition-colors focus:border-Pp3 xl:text-[20px]";
 
 const fieldLabelClass =
   "h-[20px] xl:h-[32px] font-montserrat text-[18px] xl:text-[26px] font-bold leading-none text-W5";
@@ -56,7 +56,7 @@ export const ContactSection = () => {
 
     if (!result.success) {
       const newErrors: Partial<Record<ContactFormField, string>> = {};
-      
+
       result.error.issues.forEach((issue) => {
         const fieldName = issue.path[0] as ContactFormField | undefined;
         if (fieldName) {
@@ -87,7 +87,7 @@ export const ContactSection = () => {
           mensagem: values.mensagem,
         }
       );
-      
+
       setSent(true);
       form.reset();
     } catch (error) {
@@ -108,41 +108,45 @@ export const ContactSection = () => {
           </h1>
           <div className="order-2 hidden h-[151px] xl:block" />
 
-          <div className="order-3 flex h-auto w-full max-w-[404px] flex-col gap-8 font-montserrat text-[20px] text-W5 xl:h-[516px] xl:w-[404px] xl:text-[24px]">
-            <p className="font-bold leading-tight text-W5">
+          <div className="order-3 flex h-auto w-full max-w-[404px] flex-col gap-8 font-montserrat text-[20px] text-W5 xl:h-[516px] xl:w-[404px] xl:text-[20px]">
+            <p className="font-bold leading-tight text-W5 pt-14">
               Sinta-se a vontade para entrar em contato com a nossa equipe,
               estamos a disposição para trazer realidade as suas ideias.
             </p>
 
             <div className="flex flex-col gap-4">
               <strong className="text-W5">Nosso E-mail</strong>
-              <span className="text-W2">knex@contato.com</span>
+              <span className="text-W2">org.knex@gmail.com</span>
             </div>
 
             <div className="flex flex-col gap-4">
               <strong className="text-W5">Nosso Telefone</strong>
-              <span className="text-W2">(00) 00000-0000</span>
+              <span className="text-W2">(83) 9982-8024</span>
             </div>
 
             <div className="flex flex-col gap-4">
               <strong className="text-W5">Nossa Localização</strong>
-              <span className="text-W2">Rua ali Perto, 12, Centro - Patos/PB</span>
+              <span className="text-W2">Rua Alfredo Lustosa Cabral, SN , Salgadinho - Patos/PB</span>
             </div>
 
           </div>
 
           <div className="order-4 flex gap-4 xl:mt-16">
-            <IconButton src={instagramIcon} label="Instagram" />
-            <IconButton src={linkedinIcon} label="LinkedIn" />
+            <a href="https://www.instagram.com/knexjr?igsh=MTIweDlyMmx5Y2Q4bA==" target="_blank" rel="noopener noreferrer">
+              <IconButton src={instagramIcon} label="Instagram" />
+            </a>
+            <a href="https://www.linkedin.com/company/knex-consultoria-jr/" target="_blank" rel="noopener noreferrer">
+              <IconButton src={linkedinIcon} label="LinkedIn" />
+            </a>
           </div>
         </div>
 
         <form
           onSubmit={handleSubmit}
-          className="order-2 grid h-auto w-full max-w-[952px] grid-cols-1 content-start gap-x-11 gap-y-8 bg-BackGround xl:mt-[263px] xl:min-h-[997px] xl:w-[952px] xl:grid-cols-2"
+          className="order-2 grid  h-auto w-full max-w-[952px] grid-cols-1 content-start  gap-x-11 gap-y-8 bg-BackGround xl:mt-[263px] xl:min-h-[997px] xl:w-[952px] xl:grid-cols-2"
         >
           <FormField
-            className="xl:col-span-2"
+            className="xl:col-span-2 "
             label="Nome"
             name="nome"
             placeholder="Seu nome"
@@ -190,7 +194,7 @@ export const ContactSection = () => {
             <textarea
               name="mensagem"
               placeholder="Descrição da sua necessidade"
-              className="h-[180px] xl:h-[238px] w-full resize-none rounded-lg border border-Pp3 bg-P1 px-4 py-6 font-montserrat text-[20px] text-W6 outline-none placeholder:text-W2 transition-colors focus:border-Pp3 xl:text-[24px]"
+              className="h-[180px] xl:h-[238px] w-full resize-none rounded-lg border border-Pp3 bg-P1 px-4 py-6 font-montserrat text-[20px] text-W6 outline-none placeholder:text-W2 transition-colors focus:border-Pp3 xl:text-[20px] focus-within:ring-2 focus-within:ring-Pp5  focus-within:shadow-[0_0_20px_2px_rgba(165,111,238,0.60)]"
               onInput={(event) => event.currentTarget.setCustomValidity("")}
             />
             {errors.mensagem && (
@@ -202,7 +206,7 @@ export const ContactSection = () => {
 
           <div className="flex flex-col items-end justify-end gap-4 xl:col-span-2 xl:min-h-[122px]">
             {sent ? (
-              <p className="px-4 font-montserrat text-[20px] font-bold text-Pp4 xl:text-[24px]">
+              <p className="px-4 font-montserrat text-[20px] font-bold text-Pp4 xl:text-[20px]">
                 Formulário enviado com sucesso.
               </p>
             ) : null}
@@ -246,9 +250,9 @@ const FormField = ({
   error,
 }: FormFieldProps) => {
   return (
-    <label className={`flex flex-col gap-6 ${className}`}>
+    <label className={`flex flex-col  gap-6  ${className}`}>
       <span className={fieldLabelClass}>{label}</span>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2  focus-within:ring-2  focus-within:ring-Pp5 rounded-[8px] focus-within:shadow-[0_0_20px_2px_rgba(165,111,238,0.60)]">
         <input
           name={name}
           placeholder={placeholder}
