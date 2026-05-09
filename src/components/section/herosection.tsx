@@ -64,14 +64,18 @@ export const HeroSection = () => {
             </h1>
           </span>
 
-          <p className="max-w-3xl font-montserrat text-base font-light text-W2 sm:text-lg md:text-xl lg:text-2xl">
+          <p className="max-w-3xl font-montserrat text-base font-light text-W2 sm:text-lg md:text-xl lg:text-xl">
             Somos uma empresa Júnior focada no desenvolvimento de web software.
           </p>
           <div className="flex flex-row flex-wrap items-center justify-center gap-4 sm:gap-8 lg:gap-12 sm:mt-0 mt-10">
             <PrimaryButton>Entrar em Contato</PrimaryButton>
             <span className="flex flex-row items-center justify-center gap-4 sm:gap-6">
-              <IconButton src={instagramIcon} label="Instagram" />
-              <IconButton src={linkedinIcon} label="LinkedIn" />
+              <a href="https://www.instagram.com/knexjr?igsh=MTIweDlyMmx5Y2Q4bA==" target="_blank" rel="noopener noreferrer">
+                <IconButton src={instagramIcon} label="Instagram" />
+              </a>
+              <a href="https://www.linkedin.com/company/knex-consultoria-jr/" target="_blank" rel="noopener noreferrer">
+                <IconButton src={linkedinIcon} label="LinkedIn" />
+              </a>
             </span>
           </div>
         </div>
@@ -99,7 +103,7 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      <div className="flex w-full flex-row flex-wrap items-center justify-center gap-6 xl:px-[12.5%] pb-30 px-6">
+      <div className="flex w-full flex-row flex-wrap items-center justify-between max-sm:gap-8  xl:px-[12.5%] pb-30 px-10">
         {STAT_CARDS.map(({ title, value, Icon }) => (
           <StatCard key={title} title={title} value={value} Icon={Icon} />
         ))}
