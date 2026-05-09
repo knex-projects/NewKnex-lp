@@ -15,6 +15,7 @@ import {
   portfolioViisercompLogo,
   portfolioGrDesignLogo,
   portfolioIrisComunicaLogo,
+  portfolioElevenJr,
 } from "@/public/assets";
 
 const PORTFOLIO_PROJECTS: PortfolioProjectCardData[] = [
@@ -37,15 +38,22 @@ const PORTFOLIO_PROJECTS: PortfolioProjectCardData[] = [
     title: "Gleidson design",
     subtitle: "Web - LP",
     logo: portfolioGrDesignLogo,
-    href: "#",
+    href: "https://www.grdesign.tech/",
     darkTextOnHover: true,
+  },
+   {
+    id: "elevenjr",
+    title: "Eleven Jr",
+    subtitle: "Web - LP",
+    logo: portfolioElevenJr,
+    href: "https://eleven-lp.vercel.app/",
   },
   {
     id: "iris-comunica",
     title: "Íris",
     subtitle: "Web - LP",
     logo: portfolioIrisComunicaLogo,
-    href: "#",
+    href: "https://www.iriscomunicacao.tech/",
   },
 ];
 
@@ -79,7 +87,7 @@ export const PortfolioSection = () => {
   return (
     <section
       id="portfolio"
-      className="relative overflow-hidden px-6 pb-24 sm:px-10 sm:pb-28 lg:px-16 lg:pb-36 xl:px-[5%] "
+      className="relative overflow-hidden px-6 pb-24 sm:px-10 sm:pb-28 lg:px-[40px] lg:pb-36 xl:px-[5%] "
       aria-labelledby="portfolio-heading"
     >
       <div className="mx-auto flex w-full max-w-[1700px] flex-col">
