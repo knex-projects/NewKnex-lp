@@ -15,7 +15,7 @@ const EVENT_ITEMS: EventItem[] = [
   {
     id: "chama",
     title: "CHAMA",
-    year: "2024",
+    year: "2025",
     img_logo: "/assets/logos/chama-logo.png",
     img_bg: "/assets/photos/chama-bg.png",
     logoImgClassName: "brightness-0 invert",
@@ -23,7 +23,7 @@ const EVENT_ITEMS: EventItem[] = [
   {
     id: "enej",
     title: "ENEJ",
-    year: "2024",
+    year: "2025",
     img_logo: "/assets/logos/enej-logo.png",
     img_bg: "/assets/photos/enej-bg.png",
   },
