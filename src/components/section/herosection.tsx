@@ -9,6 +9,7 @@ import {
 import Image from "next/image";
 import { ShieldCheck, Star, BanknoteArrowUp } from "lucide-react";
 import { knexIcon, instagramIcon, linkedinIcon } from "@/public/assets";
+import Link from "next/link";
 
 const STAT_CARDS: StatCardProps[] = [
   {
@@ -68,7 +69,9 @@ export const HeroSection = () => {
             Somos uma empresa Júnior focada no desenvolvimento de web software.
           </p>
           <div className="flex flex-row flex-wrap items-center justify-center gap-4 sm:gap-8 lg:gap-12 sm:mt-0 mt-10">
+            <Link href="/contatos">
             <PrimaryButton>Entrar em Contato</PrimaryButton>
+            </Link>
             <span className="flex flex-row items-center justify-center gap-4 sm:gap-6">
               <a href="https://www.instagram.com/knexjr?igsh=MTIweDlyMmx5Y2Q4bA==" target="_blank" rel="noopener noreferrer">
                 <IconButton src={instagramIcon} label="Instagram" />
