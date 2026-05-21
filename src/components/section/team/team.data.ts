@@ -80,7 +80,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     image: teamCarlosEduardoPhoto,
   },
   {
-    id: "alessandro-vieira",
+    id: "alessandro-viana",
     name: "Alessandro Vieira",
     role: "Desenvolvedor Front-End",
     image: teamAlessandroPhoto,
@@ -152,12 +152,6 @@ export const TEAM_MEMBERS: TeamMember[] = [
     image: teamMonickPhoto,
   },
   {
-    id: "jose-guilherme",
-    name: "José Guilherme",
-    role: "Diretor de Recursos Humanos",
-    image: teamJosePhoto,
-  },
-  {
     id: "anaely-neves",
     name: "Anaely Neves",
     role: "Acessora de Recursos Humanos",
@@ -172,7 +166,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     id: "nathielly-pinheiro",
     name: "Nathielly Pinheiro",
-    role: "Diretora Comercial",
+    role: "Diretora de Comercial &\n Recursos Humanos",
     image: teamNathiellyPhoto,
   },
   {
