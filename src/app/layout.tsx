@@ -23,10 +23,7 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Knex Consultoria jr",
   description: "Knex Consultoria JR",
-  icons: {
-    icon: "/icon.svg",
-    
-  },
+  
 };
 
 export default function RootLayout({
