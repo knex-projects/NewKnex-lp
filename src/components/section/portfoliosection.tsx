@@ -16,6 +16,7 @@ import {
   portfolioGrDesignLogo,
   portfolioIrisComunicaLogo,
   portfolioElevenJr,
+  portfolioLíderi,
 } from "@/public/assets";
 
 const PORTFOLIO_PROJECTS: PortfolioProjectCardData[] = [
@@ -54,6 +55,13 @@ const PORTFOLIO_PROJECTS: PortfolioProjectCardData[] = [
     subtitle: "Web - LP",
     logo: portfolioIrisComunicaLogo,
     href: "https://www.iriscomunicacao.tech/",
+  },
+  {
+    id: "Líderi consultoria",
+    title: "Líderi",
+    subtitle: "Web - LP",
+    logo: portfolioLíderi,
+    href: "https://www.lidericonsultoria.com/",
   },
 ];
 
