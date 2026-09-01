@@ -20,6 +20,13 @@ import {
 } from "@/public/assets";
 
 const PORTFOLIO_PROJECTS: PortfolioProjectCardData[] = [
+   {
+    id: "Líderi consultoria",
+    title: "Líderi",
+    subtitle: "Web - LP",
+    logo: portfolioLíderi,
+    href: "https://www.lidericonsultoria.com/",
+  },
   {
     id: "viisercomp",
     title: "VII Sercomp",
@@ -56,13 +63,7 @@ const PORTFOLIO_PROJECTS: PortfolioProjectCardData[] = [
     logo: portfolioIrisComunicaLogo,
     href: "https://www.iriscomunicacao.tech/",
   },
-  {
-    id: "Líderi consultoria",
-    title: "Líderi",
-    subtitle: "Web - LP",
-    logo: portfolioLíderi,
-    href: "https://www.lidericonsultoria.com/",
-  },
+ 
 ];
 
 const AUTO_ROTATE_MS = 5200;
