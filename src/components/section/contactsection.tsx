@@ -121,7 +121,7 @@ export const ContactSection = () => {
 
             <div className="flex flex-col gap-4">
               <strong className="text-W5">Nosso Telefone</strong>
-              <span className="text-W2">(83) 9982-8024</span>
+              <a href="https://wa.me/5583981437035" target="_blank" className="text-W2">(83) 98143-7035</a>
             </div>
 
             <div className="flex flex-col gap-4">

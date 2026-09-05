@@ -19,7 +19,7 @@ export default function Footer() {
                         <h3 className="my-6 text-xl font-bold text-white lg:text-2xl">Contato</h3>
                         <ul className="lg:text-lg">
                             <li className="mb-4 ">org.knex@gmail.com</li>
-                            <li className="mb-4 ">(83) 9982-8024</li>
+                            <a href="https://wa.me/5583981437035" target="_blank" className="mb-4 ">(83) 98143-7035</a>
                             <li className="">Rua Alfredo Lustosa Cabral, SN , Salgadinho - Patos/PB </li>
                         </ul>
                     </div>
