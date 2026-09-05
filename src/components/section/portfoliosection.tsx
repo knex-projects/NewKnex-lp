@@ -61,7 +61,7 @@ const PORTFOLIO_PROJECTS: PortfolioProjectCardData[] = [
     title: "Íris",
     subtitle: "Web - LP",
     logo: portfolioIrisComunicaLogo,
-    href: "https://www.iriscomunicacao.tech/",
+    href: "https://iris-project-one.vercel.app/",
   },
  
 ];
