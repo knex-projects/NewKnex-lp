@@ -20,7 +20,7 @@ import {
 } from "@/public/assets";
 
 const PORTFOLIO_PROJECTS: PortfolioProjectCardData[] = [
-   {
+  {
     id: "Líderi consultoria",
     title: "Líderi",
     subtitle: "Web - LP",
@@ -32,14 +32,14 @@ const PORTFOLIO_PROJECTS: PortfolioProjectCardData[] = [
     title: "VII Sercomp",
     subtitle: "Web - LP",
     logo: portfolioViisercompLogo,
-    href: "#",
+    href: "",
   },
   {
     id: "eventflow",
     title: "Eventflow",
     subtitle: "Gestão de eventos",
     logo: portfolioEventFlowLogo,
-    href: "#",
+    href: "",
   },
   {
     id: "gr-design",
@@ -49,7 +49,7 @@ const PORTFOLIO_PROJECTS: PortfolioProjectCardData[] = [
     href: "https://www.grdesign.tech/",
     darkTextOnHover: true,
   },
-   {
+  {
     id: "elevenjr",
     title: "Eleven Jr",
     subtitle: "Web - LP",
@@ -63,11 +63,11 @@ const PORTFOLIO_PROJECTS: PortfolioProjectCardData[] = [
     logo: portfolioIrisComunicaLogo,
     href: "https://iris-project-one.vercel.app/",
   },
- 
 ];
 
 const AUTO_ROTATE_MS = 5200;
-const INFINITE_PORTFOLIO_PROJECTS = PORTFOLIO_PROJECTS.concat(PORTFOLIO_PROJECTS);
+const INFINITE_PORTFOLIO_PROJECTS =
+  PORTFOLIO_PROJECTS.concat(PORTFOLIO_PROJECTS);
 
 export const PortfolioSection = () => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
