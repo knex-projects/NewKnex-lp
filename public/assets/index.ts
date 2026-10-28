@@ -5,6 +5,7 @@ export const instagramIcon = "/assets/icons/instagram.svg";
 export const faqDesktopOpenIcon = "/assets/icons/faq-desktop-open.svg";
 export const faqMobileOpenIcon = "/assets/icons/faq-mobile-open.svg";
 export const faqMobileClosedIcon = "/assets/icons/faq-mobile-closed.svg";
+export const whatsAppIcon = "/assets/icons/WhatsApp.svg";
 
 export const portfolioViisercompLogo = "/assets/logos/viisercomp.png";
 export const portfolioEventFlowLogo = "/assets/logos/eventflow.png";
