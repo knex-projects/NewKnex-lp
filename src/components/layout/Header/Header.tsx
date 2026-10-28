@@ -15,8 +15,8 @@ export default function Header() {
     }
 
     return (
-        <header className={ `z-100 w-full px-6 py-10 bg-BackGround lg:px-10 xl:px-[12.5%] ${ openMenu ? "fixed" : "static" }` }>
-            <nav className="flex items-center justify-between">
+        <header className={ `z-100 w-full px-6 py-10 bg-BackGround  lg:px-10 xl:px-[12.5%] ${ openMenu ? "fixed" : "fixed" }` }>
+            <nav className="flex items-center  justify-between">
                 
             <Link href="/">
                 <Image src={ logoKnex } alt="Logo da Knex" className={ `transition ease-out duration-300 md:opacity-100 md:pointer-events-auto ${ openMenu ? "opacity-0" : "opacity-100" }` } />
