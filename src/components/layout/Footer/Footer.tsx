@@ -19,8 +19,8 @@ export default function Footer() {
                         <h3 className="my-6 text-xl font-bold text-white lg:text-2xl">Contato</h3>
                         <ul className="lg:text-lg">
                             <li className="mb-4 ">org.knex@gmail.com</li>
-                            <a href="https://wa.me/558388488786?text=Ol%C3%A1!%0AGostaria%20de%20agendar%20uma%20reuni%C3%A3o." target="_blank" className=" ">(83) 8848-8786</a>
-                            <a href="https://wa.me/558388488786?text=Ol%C3%A1!%0AGostaria%20de%20agendar%20uma%20reuni%C3%A3o." target="_blank" className=" fixed bottom-10 z-50 w-15 h-15 right-[5%] ">  <Image
+                            <a href="https://wa.me/558388488786?text=Ol%C3%A1%20Knex!%20Vim%20pelo%20site%2Finstagram%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20seus%20servi%C3%A7os%20de%20tecnologia." target="_blank" className=" ">(83) 8848-8786</a>
+                            <a href="https://wa.me/558388488786?text=Ol%C3%A1%20Knex!%20Vim%20pelo%20site%2Finstagram%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20seus%20servi%C3%A7os%20de%20tecnologia." target="_blank" className=" fixed bottom-10 z-50 w-15 h-15 right-[5%] ">  <Image
                                 src={whatsAppIcon}
                                 alt="Logo da Knex"
                                 width={15}
@@ -61,7 +61,7 @@ export default function Footer() {
                                 </a>
                             </li>
                             <li>
-                                <a href="https://wa.me/558388488786?text=Ol%C3%A1!%0AGostaria%20de%20agendar%20uma%20reuni%C3%A3o." target="_blank" className="">  
+                                <a href="https://wa.me/558388488786?text=Ol%C3%A1%20Knex!%20Vim%20pelo%20site%2Finstagram%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20seus%20servi%C3%A7os%20de%20tecnologia." target="_blank" className="">  
                                 <IconButton src={whatsAppIcon} label="Ícone do LinkedIn" />
                                 </a>
                             </li>

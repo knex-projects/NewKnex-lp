@@ -140,14 +140,8 @@ export const ContactSection = () => {
               <IconButton src={linkedinIcon} label="LinkedIn" />
             </a>
 
-            <a href="https://wa.me/558388488786?text=Ol%C3%A1!%0AGostaria%20de%20agendar%20uma%20reuni%C3%A3o." target="_blank" className="">  
-            <Image
-              src={whatsAppIcon}
-              alt="Logo da Knex"
-              width={15}
-              height={15}
-              className="mx-auto md:mx-0 brightness-0 transition-all duration-300 hover:brightness-100 hover:invert-0 invert md:mb-auto w-10  "
-            />
+            <a href="https://wa.me/558388488786?text=Ol%C3%A1%20Knex!%20Vim%20pelo%20site%2Finstagram%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20seus%20servi%C3%A7os%20de%20tecnologia." target="_blank" className="">  
+            <IconButton src={whatsAppIcon} label="LinkedIn" />
             </a>
 
           </div>
