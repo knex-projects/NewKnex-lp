@@ -3,8 +3,9 @@
 import { FormEvent, useEffect, useState } from "react";
 import { z } from "zod";
 import emailjs from "@emailjs/browser";
-import { instagramIcon, linkedinIcon } from "@/public/assets";
+import { instagramIcon, linkedinIcon ,whatsAppIcon } from "@/public/assets";
 import { IconButton } from "@/src/components/ui";
+import Image from "next/image";
 
 const contactFormSchema = z.object({
   nome: z.string().trim().min(2, "Informe seu nome."),
@@ -121,7 +122,7 @@ export const ContactSection = () => {
 
             <div className="flex flex-col gap-4">
               <strong className="text-W5">Nosso Telefone</strong>
-              <a href="https://wa.me/5583981437035" target="_blank" className="text-W2">(83) 98143-7035</a>
+              <a href="https://wa.me/558388488786" target="_blank" className="text-W2">(83) 8848-8786</a>
             </div>
 
             <div className="flex flex-col gap-4">
@@ -138,6 +139,17 @@ export const ContactSection = () => {
             <a href="https://www.linkedin.com/company/knex-consultoria-jr/" target="_blank" rel="noopener noreferrer">
               <IconButton src={linkedinIcon} label="LinkedIn" />
             </a>
+
+            <a href="https://wa.me/558388488786?text=Ol%C3%A1!%0AGostaria%20de%20agendar%20uma%20reuni%C3%A3o." target="_blank" className="">  
+            <Image
+              src={whatsAppIcon}
+              alt="Logo da Knex"
+              width={15}
+              height={15}
+              className="mx-auto md:mx-0 brightness-0 transition-all duration-300 hover:brightness-100 hover:invert-0 invert md:mb-auto w-10  "
+            />
+            </a>
+
           </div>
         </div>
 

@@ -1,5 +1,5 @@
 import logoKnex from "@/public/assets/logo/logo-knex.svg"
-import { instagramIcon, linkedinIcon } from "@/public/assets"
+import { instagramIcon, linkedinIcon, whatsAppIcon } from "@/public/assets"
 import Image from "next/image"
 import Link from "next/link"
 import { IconButton } from "../../ui"
@@ -19,8 +19,15 @@ export default function Footer() {
                         <h3 className="my-6 text-xl font-bold text-white lg:text-2xl">Contato</h3>
                         <ul className="lg:text-lg">
                             <li className="mb-4 ">org.knex@gmail.com</li>
-                            <a href="https://wa.me/5583981437035" target="_blank" className="mb-4 ">(83) 98143-7035</a>
-                            <li className="">Rua Alfredo Lustosa Cabral, SN , Salgadinho - Patos/PB </li>
+                            <a href="https://wa.me/558388488786?text=Ol%C3%A1!%0AGostaria%20de%20agendar%20uma%20reuni%C3%A3o." target="_blank" className=" ">(83) 8848-8786</a>
+                            <a href="https://wa.me/558388488786?text=Ol%C3%A1!%0AGostaria%20de%20agendar%20uma%20reuni%C3%A3o." target="_blank" className=" fixed bottom-10 z-50 w-15 h-15 right-[5%] ">  <Image
+                                src={whatsAppIcon}
+                                alt="Logo da Knex"
+                                width={15}
+                                height={15}
+                                className="mx-auto md:mx-0 brightness-0 transition-all duration-300 hover:brightness-100 hover:invert-0 invert md:mb-auto md:w-15   w-[40px]"
+                            /></a>
+                            <li className="mt-4">Rua Alfredo Lustosa Cabral, SN , Salgadinho - Patos/PB </li>
                         </ul>
                     </div>
                     <div>
@@ -51,6 +58,11 @@ export default function Footer() {
                             <li>
                                 <a href="https://www.linkedin.com/company/knex-consultoria-jr/" target="_blank" rel="noopener noreferrer">
                                     <IconButton src={linkedinIcon} label="Ícone do LinkedIn" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://wa.me/558388488786?text=Ol%C3%A1!%0AGostaria%20de%20agendar%20uma%20reuni%C3%A3o." target="_blank" className="">  
+                                <IconButton src={whatsAppIcon} label="Ícone do LinkedIn" />
                                 </a>
                             </li>
                         </ul>
